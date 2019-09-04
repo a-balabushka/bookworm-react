@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/routes/guest-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/guest-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,14 +24,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>message</find>
-      <find>userLoggedIn</find>
-      <find>throw</find>
-      <find>mapState</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -86,7 +84,18 @@
       <workItem from="1566913331804" duration="1449000" />
       <workItem from="1566917129119" duration="115000" />
       <workItem from="1566917734450" duration="5430000" />
-      <workItem from="1567018260165" duration="760000" />
+      <workItem from="1567018260165" duration="4437000" />
+      <workItem from="1567066793126" duration="11963000" />
+      <workItem from="1567162511399" duration="2621000" />
+      <workItem from="1567180474092" duration="2625000" />
+      <workItem from="1567431784968" duration="1534000" />
+      <workItem from="1567435394791" duration="706000" />
+      <workItem from="1567447432511" duration="1847000" />
+      <workItem from="1567453231994" duration="2924000" />
+      <workItem from="1567542955858" duration="602000" />
+      <workItem from="1567593624442" duration="3364000" />
+      <workItem from="1567602848613" duration="3948000" />
+      <workItem from="1567609111124" duration="2589000" />
     </task>
     <servers />
   </component>
@@ -98,7 +107,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

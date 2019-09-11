@@ -4,12 +4,11 @@ import { Form, Button, Message } from "semantic-ui-react";
 import Validator from 'validator';
 import InlineError from '../messages/inline-error';
 
-class SingupForm extends Component {
+class ForgotPasswordForm extends Component {
 
   state = {
     data: {
       email: '',
-      password: ''
     },
     loading: false,
     errors: {}
@@ -55,10 +54,6 @@ class SingupForm extends Component {
       errors.email = 'Invalid email';
     }
 
-    if (!data.password) {
-      errors.password = 'Can\'t be blank';
-    }
-
     return errors;
   };
 
@@ -67,42 +62,27 @@ class SingupForm extends Component {
 
     return (
       <Form onSubmit={this.onSubmit} loading={loading}>
-        { errors.global && <Message negative>
-            <Message.Header>Something went wrong</Message.Header>
-            <p> {errors.global} </p>
-          </Message> }
-          <Form.Field error={ !!errors.email }>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@example.com"
-              value={data.email}
-              onChange={this.onChange}
-            />
-            {errors.email && <InlineError text={ errors.email } />}
-          </Form.Field>
-          <Form.Field error={ !!errors.password }>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              value={data.password}
-              onChange={this.onChange}
-            />
-            {errors.password && <InlineError text={ errors.password } />}
-          </Form.Field>
-        <Button primary>Sign up</Button>
+        { !!errors.global && <Message negative>{errors.global}</Message> }
+        <Form.Field error={ !!errors.email }>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@example.com"
+            value={data.email}
+            onChange={this.onChange}
+          />
+          {errors.email && <InlineError text={ errors.email } />}
+        </Form.Field>
+        <Button primary>Continue</Button>
       </Form>
     )
   }
 }
 
-SingupForm.propTypes = {
+ForgotPasswordForm.propTypes = {
   submit: PropTypes.func.isRequired
 };
 
-export default SingupForm;
+export default ForgotPasswordForm;

@@ -15,7 +15,7 @@ const GuestRoute = ({ isAuthenticated, component: Component, ...rest }) => (
 );
 
 GuestRoute.propTypes = {
-  component: PropTypes.func.isRequired,
+  component: PropTypes.object.isRequired,
   isAuthenticated: PropTypes.bool.isRequired
 };
 

@@ -5,9 +5,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ctas/add-book-cta.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ctas/add-book-cta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/book-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/reset-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/reset-password-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/search-book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/search-book-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/new-book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/routes/guest-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/guest-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/routes/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/user-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +56,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src" />
       <recent name="D:\Work\Examples\bookworm-react\src" />
     </key>
   </component>
@@ -107,7 +117,12 @@
       <workItem from="1568212257849" duration="7917000" />
       <workItem from="1568229440072" duration="3877000" />
       <workItem from="1568268143635" duration="3547000" />
-      <workItem from="1568281580955" duration="4110000" />
+      <workItem from="1568281580955" duration="16085000" />
+      <workItem from="1568542911971" duration="10311000" />
+      <workItem from="1568557573244" duration="4046000" />
+      <workItem from="1568562886498" duration="2347000" />
+      <workItem from="1568568766947" duration="2929000" />
+      <workItem from="1568615063084" duration="939000" />
     </task>
     <servers />
   </component>

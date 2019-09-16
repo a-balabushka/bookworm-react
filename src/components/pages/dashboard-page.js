@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ConfirmEmailMessage from '../messages/confirm-email-message';
 import { allBooksSelector } from '../../reducers/books';
-import AddBookCtA from '../ctas/add-book-cta';
+import AddBook from '../ctas/add-book-cta';
 
 const DashboardPage = ({ isConfirmed, books }) => (
   <div>
     {!isConfirmed && <ConfirmEmailMessage />}
-    {books.length === 0 && <AddBookCtA />}
+    {books.length === 0 && <AddBook />}
   </div>
 );
 

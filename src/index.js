@@ -10,6 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './root-reducer';
 import { userLoggedIn } from './actions/auth';
+import setAuthorizationHeader from './utils/set-authorization-header';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
@@ -20,6 +21,7 @@ if (localStorage.bookwormJWT) {
     email: payload.email,
     confirmed: payload.confirmed
   };
+  setAuthorizationHeader(localStorage.bookwormJWT);
   store.dispatch(userLoggedIn(user));
 }
 

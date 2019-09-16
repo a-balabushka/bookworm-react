@@ -19,17 +19,19 @@ class BookForm extends Component {
     errors: {}
   };
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      data: {
-        goodreadsId: props.book.goodreadsId,
-        title: props.book.title,
-        authors: props.book.authors,
-        cover: props.book.covers[0],
-        pages: props.book.pages
-      },
-      covers: this.props.book.covers
-    })
+  componentDidUpdate(prevProps) {
+    if (this.props.book.goodreadsId !== prevProps.book.goodreadsId) {
+      this.setState({
+        data: {
+          goodreadsId: this.props.book.goodreadsId,
+          title: this.props.book.title,
+          authors: this.props.book.authors,
+          cover: this.props.book.covers[0],
+          pages: this.props.book.pages
+        },
+        covers: this.props.book.covers
+      })
+    }
   }
 
   onChange = e => {
@@ -100,6 +102,8 @@ class BookForm extends Component {
     if (!data.pages ) {
       errors.pages  = 'Can\'t be blank';
     }
+
+    return errors;
   };
 
   render() {
@@ -108,7 +112,7 @@ class BookForm extends Component {
     return (
       <Segment>
         <Form onSubmit={ this.onSubmit } loading={ loading }>
-          <Grid columns={2} fluid stackable>
+          <Grid columns={2} stackable>
             <Grid.Row>
               <Grid.Column>
                 <Form.Field error={ !!errors.title }>
@@ -175,7 +179,7 @@ BookForm.propTypes = {
     goodreadsId: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     authors: PropTypes.string.isRequired,
-    cover: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     pages: PropTypes.number.isRequired
   }).isRequired
 };

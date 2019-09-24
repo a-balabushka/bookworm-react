@@ -5,15 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ctas/add-book-cta.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ctas/add-book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/book-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/search-book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/search-book-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/new-book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/routes/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/user-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
@@ -142,7 +139,8 @@
       <workItem from="1569316479993" duration="1198000" />
       <workItem from="1569323431898" duration="2953000" />
       <workItem from="1569333150297" duration="1512000" />
-      <workItem from="1569334777754" duration="1732000" />
+      <workItem from="1569334777754" duration="6615000" />
+      <workItem from="1569342209124" duration="639000" />
     </task>
     <servers />
   </component>

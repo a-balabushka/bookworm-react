@@ -4,24 +4,33 @@ import { Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchBookForm from '../forms/search-book-form';
 import BookForm from '../forms/book-form';
-import { search } from '../../actions/books';
+import { search, fetchPages, createBook } from '../../actions/books';
 
 class NewBookPage extends Component {
 
   state = {
-    book: null
+    book: null,
+    loadingBook: false
   };
 
   change = (data) =>
     this.props.search(data);
 
   onBookSelect = book => {
-    this.setState({
-      book
-    });
+    this.setState({loadingBook: true});
+    this.props.fetchPages(book.goodreadsId)
+      .then(pages => this.setState({
+        book: {
+          ...book,
+          pages
+        },
+        loadingBook: false
+      }))
   };
 
-  addBook = () => console.log('hi');
+  addBook = book =>
+    this.props.createBook(book)
+      .then(() => this.props.history.push('/dashboard'));
 
   render() {
     return(
@@ -32,7 +41,9 @@ class NewBookPage extends Component {
           onBookSelect={this.onBookSelect}
         />
 
-        {this.state.book && (
+        {this.state.loadingBook && <p>Loading....</p>}
+
+        {this.state.book && !this.state.loadingBook && (
           <BookForm submit={this.addBook} book={this.state.book} />
         )}
       </Segment>
@@ -41,7 +52,12 @@ class NewBookPage extends Component {
 }
 
 NewBookPage.propTypes = {
-  search: PropTypes.func.isRequired
+  search: PropTypes.func.isRequired,
+  fetchPages: PropTypes.func.isRequired,
+  createBook: PropTypes.func.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 };
 
-export default connect(null, { search })(NewBookPage);
+export default connect(null, { search, fetchPages, createBook })(NewBookPage);

@@ -47,7 +47,7 @@ class SearchBookForm extends Component {
             key: book.goodreadsId,
             value: book.goodreadsId,
             text: book.title
-          })
+          });
         });
         this.setState({
           loading: false,

@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Grid, Segment, Image } from 'semantic-ui-react';
-import InlineError from '../messages/inline-error';
+import { Form, Button, Grid, Segment, Image } from "semantic-ui-react";
+import InlineError from "../messages/inline-error";
 
 class BookForm extends Component {
-
   state = {
     data: {
       goodreadsId: this.props.book.goodreadsId,
@@ -30,7 +29,7 @@ class BookForm extends Component {
           pages: this.props.book.pages
         },
         covers: this.props.book.covers
-      })
+      });
     }
   }
 
@@ -41,7 +40,7 @@ class BookForm extends Component {
         ...data,
         [e.target.name]: e.target.value
       }
-    })
+    });
   };
 
   onChangeNumber = e => {
@@ -51,10 +50,11 @@ class BookForm extends Component {
         ...data,
         [e.target.name]: parseInt(e.target.value, 10)
       }
-    })
+    });
   };
 
-  onSubmit = () => {
+  onSubmit = e => {
+    e.preventDefault();
     const { data } = this.state;
     const errors = this.validate(data);
     this.setState({
@@ -65,14 +65,12 @@ class BookForm extends Component {
       this.setState({
         loading: true
       });
-      this.props
-        .submit(data)
-        .catch(err => {
-          this.setState({
-            errors: err.response.data.errors,
-            loading: false
-          });
+      this.props.submit(data).catch(err => {
+        this.setState({
+          errors: err.response.data.errors,
+          loading: false
         });
+      });
     }
   };
 
@@ -85,22 +83,22 @@ class BookForm extends Component {
         ...this.state.data,
         cover: covers[newIndex]
       }
-    })
+    });
   };
 
   validate = data => {
     const errors = {};
 
     if (!data.title) {
-      errors.title = 'Can\'t be blank';
+      errors.title = "Can't be blank";
     }
 
     if (!data.authors) {
-      errors.authors = 'Can\'t be blank';
+      errors.authors = "Can't be blank";
     }
 
-    if (!data.pages ) {
-      errors.pages  = 'Can\'t be blank';
+    if (!data.pages) {
+      errors.pages = "Can't be blank";
     }
 
     return errors;
@@ -111,11 +109,11 @@ class BookForm extends Component {
 
     return (
       <Segment>
-        <Form onSubmit={ this.onSubmit } loading={ loading }>
+        <Form onSubmit={this.onSubmit} loading={loading}>
           <Grid columns={2} stackable>
             <Grid.Row>
               <Grid.Column>
-                <Form.Field error={ !!errors.title }>
+                <Form.Field error={!!errors.title}>
                   <label htmlFor="title">Book title</label>
                   <input
                     type="text"
@@ -125,9 +123,9 @@ class BookForm extends Component {
                     value={data.title}
                     onChange={this.onChange}
                   />
-                  {errors.title && <InlineError text={ errors.title } />}
+                  {errors.title && <InlineError text={errors.title} />}
                 </Form.Field>
-                <Form.Field error={ !!errors.authors }>
+                <Form.Field error={!!errors.authors}>
                   <label htmlFor="title">Book Authors</label>
                   <input
                     type="text"
@@ -137,28 +135,28 @@ class BookForm extends Component {
                     value={data.authors}
                     onChange={this.onChange}
                   />
-                  {errors.authors && <InlineError text={ errors.authors } />}
+                  {errors.authors && <InlineError text={errors.authors} />}
                 </Form.Field>
-                <Form.Field error={ !!errors.pages }>
+                <Form.Field error={!!errors.pages}>
                   <label htmlFor="title">Pages</label>
                   <input
-                    type="number"
+                    disabled={data.pages === undefined}
+                    type="text"
                     id="pages"
                     name="pages"
-                    value={data.pages}
+                    value={
+                      data.pages !== undefined ? data.pages : "Loading....."
+                    }
                     onChange={this.onChangeNumber}
                   />
-                  {errors.pages && <InlineError text={ errors.pages } />}
+                  {errors.pages && <InlineError text={errors.pages} />}
                 </Form.Field>
               </Grid.Column>
               <Grid.Column>
                 <Image size="small" src={data.cover} />
                 {this.state.covers.length > 1 && (
-                  <a
-                    role="button"
-                    tabIndex={0}
-                    onClick={this.changeCover}
-                  >Another cover
+                  <a role="button" tabIndex={0} onClick={this.changeCover}>
+                    Another cover
                   </a>
                 )}
               </Grid.Column>
@@ -169,8 +167,8 @@ class BookForm extends Component {
           </Grid>
         </Form>
       </Segment>
-    )
-  };
+    );
+  }
 }
 
 BookForm.propTypes = {
@@ -180,7 +178,7 @@ BookForm.propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.string.isRequired,
     covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    pages: PropTypes.number.isRequired
+    pages: PropTypes.number
   }).isRequired
 };
 

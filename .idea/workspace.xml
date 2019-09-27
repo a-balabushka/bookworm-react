@@ -6,12 +6,12 @@
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routes/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/user-route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/signup-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -140,7 +140,11 @@
       <workItem from="1569323431898" duration="2953000" />
       <workItem from="1569333150297" duration="1512000" />
       <workItem from="1569334777754" duration="6615000" />
-      <workItem from="1569342209124" duration="639000" />
+      <workItem from="1569342209124" duration="7869000" />
+      <workItem from="1569356647805" duration="2058000" />
+      <workItem from="1569575033355" duration="624000" />
+      <workItem from="1569580834323" duration="693000" />
+      <workItem from="1569581889845" duration="6914000" />
     </task>
     <servers />
   </component>

@@ -1,18 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { Menu, Dropdown, Image } from "semantic-ui-react";
+import { Menu, Dropdown } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import gravatarUrl from "gravatar-url";
-import { FormattedMessage } from 'react-intl';
 import { logout } from "../../actions/auth";
-import { setLocale } from "../../actions/locale";
 import { allBooksSelector } from "../../reducers/books";
 
-const TopNavigation = ({ user, logout, hasBooks, setLocale }) => (
+const TopNavigation = ({ user, logout, hasBooks }) => (
   <Menu secondary pointing>
     <Menu.Item as={Link} to="/dashboard">
-      <FormattedMessage id="nav.dashboard" defaultMessage="Dashboard" />
+      Dashboard
     </Menu.Item>
     {hasBooks && (
       <Menu.Item as={Link} to="/books/new">
@@ -20,11 +17,7 @@ const TopNavigation = ({ user, logout, hasBooks, setLocale }) => (
       </Menu.Item>
     )}
     <Menu.Menu position="right">
-
-      <a role="button" onClick={() => setLocale('en')}>EN</a> |
-      <a role="button" onClick={() => setLocale('ru')}>RU</a>
-
-      <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} />}>
+      <Dropdown>
         <Dropdown.Menu>
           <Dropdown.Item onClick={() => logout()}>Logout</Dropdown.Item>
         </Dropdown.Menu>
@@ -38,8 +31,7 @@ TopNavigation.propTypes = {
     email: PropTypes.string.isRequired
   }).isRequired,
   hasBooks: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired,
-  setLocale: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired
 };
 
 function MapStateToProps(state) {
@@ -51,5 +43,5 @@ function MapStateToProps(state) {
 
 export default connect(
   MapStateToProps,
-  { logout, setLocale }
+  { logout }
 )(TopNavigation);

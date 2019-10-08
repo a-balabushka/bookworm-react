@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/signup-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/book-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/search-book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/search-book-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/new-book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,7 +142,26 @@
       <workItem from="1569356647805" duration="2058000" />
       <workItem from="1569575033355" duration="624000" />
       <workItem from="1569580834323" duration="693000" />
-      <workItem from="1569581889845" duration="6914000" />
+      <workItem from="1569581889845" duration="16408000" />
+      <workItem from="1569827780869" duration="5808000" />
+      <workItem from="1569836261121" duration="17929000" />
+      <workItem from="1570008133483" duration="2005000" />
+      <workItem from="1570044270805" duration="739000" />
+      <workItem from="1570045765665" duration="861000" />
+      <workItem from="1570264544004" duration="4868000" />
+      <workItem from="1570275592867" duration="744000" />
+      <workItem from="1570276873218" duration="916000" />
+      <workItem from="1570280845264" duration="794000" />
+      <workItem from="1570296364106" duration="3877000" />
+      <workItem from="1570347067257" duration="1355000" />
+      <workItem from="1570360379546" duration="891000" />
+      <workItem from="1570367174351" duration="1326000" />
+      <workItem from="1570376651168" duration="747000" />
+      <workItem from="1570384137479" duration="1045000" />
+      <workItem from="1570393799680" duration="1054000" />
+      <workItem from="1570470186419" duration="1931000" />
+      <workItem from="1570515202168" duration="8300000" />
+      <workItem from="1570526038320" duration="10361000" />
     </task>
     <servers />
   </component>

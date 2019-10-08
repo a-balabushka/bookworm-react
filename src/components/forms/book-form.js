@@ -10,7 +10,7 @@ class BookForm extends Component {
       title: this.props.book.title,
       authors: this.props.book.authors,
       cover: this.props.book.covers[0],
-      pages: this.props.book.pages
+      pages: this.props.book.pages,
     },
     covers: this.props.book.covers,
     index: 0,
@@ -26,7 +26,7 @@ class BookForm extends Component {
           title: this.props.book.title,
           authors: this.props.book.authors,
           cover: this.props.book.covers[0],
-          pages: this.props.book.pages
+          pages: this.props.book.pages,
         },
         covers: this.props.book.covers
       });
@@ -162,7 +162,7 @@ class BookForm extends Component {
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-              <Button primary>Save</Button>
+              <Button disabled={this.props.check} primary>Save</Button>
             </Grid.Row>
           </Grid>
         </Form>
@@ -178,8 +178,9 @@ BookForm.propTypes = {
     title: PropTypes.string.isRequired,
     authors: PropTypes.string.isRequired,
     covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
-    pages: PropTypes.number
-  }).isRequired
+    pages: PropTypes.number,
+  }).isRequired,
+  check: PropTypes.bool.isRequired
 };
 
 export default BookForm;

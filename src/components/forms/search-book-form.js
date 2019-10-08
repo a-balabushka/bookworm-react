@@ -46,7 +46,8 @@ class SearchBookForm extends Component {
           options.push({
             key: book.goodreadsId,
             value: book.goodreadsId,
-            text: book.title
+            text: book.title,
+            image: book.covers[0]
           });
         });
         this.setState({
@@ -63,6 +64,7 @@ class SearchBookForm extends Component {
         <Dropdown
           search
           fluid
+          labeled
           placeholder="Search for a book by title"
           value={this.state.query}
           onSearchChange={this.onSearchChange}

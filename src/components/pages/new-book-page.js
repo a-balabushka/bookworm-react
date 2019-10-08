@@ -4,13 +4,14 @@ import { Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchBookForm from '../forms/search-book-form';
 import BookForm from '../forms/book-form';
-import { search, fetchPages, createBook } from '../../actions/books';
+import { search, fetchPages, createBook, fetchBooks } from '../../actions/books';
 
 class NewBookPage extends Component {
 
   state = {
     book: null,
-    loadingBook: false
+    loadingBook: false,
+    list: JSON.parse(localStorage.addedUserBooksId)
   };
 
   change = (data) =>
@@ -19,13 +20,23 @@ class NewBookPage extends Component {
   onBookSelect = book => {
     this.setState({loadingBook: true});
     this.props.fetchPages(book.goodreadsId)
-      .then(pages => this.setState({
+      .then(data => this.setState({
         book: {
           ...book,
-          pages
+          ...data
         },
         loadingBook: false
-      }))
+      }));
+  };
+
+  checkAddBook = () => {
+    const { book, list } = this.state;
+    for (let i = 0; i < list.length; i++) {
+      if (list[i] === book.goodreadsId) {
+        return true
+      }
+    }
+    return false
   };
 
   addBook = book =>
@@ -44,7 +55,11 @@ class NewBookPage extends Component {
         {this.state.loadingBook && <p>Loading....</p>}
 
         {this.state.book && !this.state.loadingBook && (
-          <BookForm submit={this.addBook} book={this.state.book} />
+          <BookForm
+            submit={this.addBook}
+            book={this.state.book}
+            check={this.checkAddBook()}
+          />
         )}
       </Segment>
     );
@@ -60,4 +75,4 @@ NewBookPage.propTypes = {
   }).isRequired
 };
 
-export default connect(null, { search, fetchPages, createBook })(NewBookPage);
+export default connect(null, { search, fetchPages, createBook, fetchBooks })(NewBookPage);

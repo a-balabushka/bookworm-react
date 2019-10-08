@@ -4,19 +4,30 @@ import { connect } from 'react-redux';
 import ConfirmEmailMessage from '../messages/confirm-email-message';
 import { allBooksSelector } from '../../reducers/books';
 import AddBook from '../ctas/add-book';
+import UserBooksPage from '../pages/user-books-page';
 import { fetchBooks } from '../../actions/books';
 
 class DashboardPage extends Component {
-  componentDidMount = () => this.onInit(this.props);
+
+  componentDidMount = () => {
+    this.onInit(this.props).then(() => {
+      localStorage.addedUserBooksId = this.createBookIdList();
+    });
+  };
 
   onInit = (props) => props.fetchBooks();
+
+  createBookIdList = () => {
+    const books = this.props.books;
+    return JSON.stringify(books.map(item => item.goodreadsId));
+  };
 
   render() {
     const { isConfirmed, books } = this.props;
     return (
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
-        {books.length === 0 ? <AddBook /> : <p>You have books!</p>}
+        {books.length === 0 ? <AddBook /> : <UserBooksPage books={books} />}
       </div>
     )
   }

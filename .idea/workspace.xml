@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/locale.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/book-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/messages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/locale.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/new-book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +62,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\search" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src" />
       <recent name="D:\Work\Examples\bookworm-react\src" />
     </key>
@@ -163,7 +164,12 @@
       <workItem from="1570393799680" duration="1054000" />
       <workItem from="1570470186419" duration="1931000" />
       <workItem from="1570515202168" duration="8300000" />
-      <workItem from="1570526038320" duration="11596000" />
+      <workItem from="1570526038320" duration="17346000" />
+      <workItem from="1570554151800" duration="1690000" />
+      <workItem from="1570650945970" duration="8872000" />
+      <workItem from="1570689581772" duration="12414000" />
+      <workItem from="1570711302713" duration="8723000" />
+      <workItem from="1570807827373" duration="5956000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,7 @@ const bookRemoval = id => ({
 
 export const search = title => () => api.books.search(title);
 
-export const fetchPages = id => () => api.books.fetchPages(id);
+export const fetchBookData = id => () => api.books.fetchBookData(id);
 
 export const fetchBooks = () => dispatch =>
   api.books.fetchAll().then(books => {

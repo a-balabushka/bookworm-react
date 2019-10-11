@@ -17,6 +17,7 @@ import TopNavigation from "./components/navigation/top-navigation";
 import { fetchCurrentUser } from "./actions/users";
 
 import "semantic-ui-css/semantic.min.css";
+import BookPage from "./components/pages/book-page";
 
 class App extends Component {
   componentDidMount() {
@@ -74,6 +75,12 @@ class App extends Component {
             path="/books/new"
             exact
             component={NewBookPage}
+          />
+          <UserRoute
+            location={location}
+            path="/books/new/:id"
+            exact
+            component={BookPage}
           />
         </Loader>
       </div>

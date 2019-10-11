@@ -4,7 +4,7 @@ import { Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import SearchBookForm from '../forms/search-book-form';
 import BookForm from '../forms/book-form';
-import { search, fetchPages, createBook, fetchBooks } from '../../actions/books';
+import { search, fetchBookData, createBook, fetchBooks } from '../../actions/books';
 
 class NewBookPage extends Component {
 
@@ -19,7 +19,7 @@ class NewBookPage extends Component {
 
   onBookSelect = book => {
     this.setState({loadingBook: true});
-    this.props.fetchPages(book.goodreadsId)
+    this.props.fetchBookData(book.goodreadsId)
       .then(data => this.setState({
         book: {
           ...book,
@@ -68,11 +68,11 @@ class NewBookPage extends Component {
 
 NewBookPage.propTypes = {
   search: PropTypes.func.isRequired,
-  fetchPages: PropTypes.func.isRequired,
+  fetchBookData: PropTypes.func.isRequired,
   createBook: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }).isRequired
 };
 
-export default connect(null, { search, fetchPages, createBook, fetchBooks })(NewBookPage);
+export default connect(null, { search, fetchBookData, createBook, fetchBooks })(NewBookPage);

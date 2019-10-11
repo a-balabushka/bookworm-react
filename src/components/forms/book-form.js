@@ -11,6 +11,13 @@ class BookForm extends Component {
       authors: this.props.book.authors,
       cover: this.props.book.covers[0],
       pages: this.props.book.pages,
+      rating: this.props.book.rating,
+      description: this.props.book.description,
+      format: this.props.book.format,
+      publication_day: this.props.book.publication_day,
+      publication_month: this.props.book.publication_month,
+      publication_year: this.props.book.publication_year,
+      publisher: this.props.book.publisher
     },
     covers: this.props.book.covers,
     index: 0,
@@ -27,6 +34,13 @@ class BookForm extends Component {
           authors: this.props.book.authors,
           cover: this.props.book.covers[0],
           pages: this.props.book.pages,
+          rating: this.props.book.rating,
+          description: this.props.book.description,
+          format: this.props.book.format,
+          publication_day: this.props.book.publication_day,
+          publication_month: this.props.book.publication_month,
+          publication_year: this.props.book.publication_year,
+          publisher: this.props.book.publisher
         },
         covers: this.props.book.covers
       });
@@ -104,6 +118,10 @@ class BookForm extends Component {
     return errors;
   };
 
+  createDescription = () => {
+    return {__html: this.state.data.description}
+  };
+
   render() {
     const { data, errors, loading } = this.state;
 
@@ -124,6 +142,11 @@ class BookForm extends Component {
                     onChange={this.onChange}
                   />
                   {errors.title && <InlineError text={errors.title} />}
+                </Form.Field>
+                <Form.Field error={!!errors.description}>
+                  <label htmlFor="description">Description</label>
+                  <div dangerouslySetInnerHTML={this.createDescription()} />
+                  {errors.description && <InlineError text={errors.description} />}
                 </Form.Field>
                 <Form.Field error={!!errors.authors}>
                   <label htmlFor="title">Book Authors</label>
@@ -151,6 +174,34 @@ class BookForm extends Component {
                   />
                   {errors.pages && <InlineError text={errors.pages} />}
                 </Form.Field>
+                <Form.Field error={!!errors.format}>
+                  <label htmlFor="title">Format</label>
+                  <input
+                    type="text"
+                    id="format"
+                    name="format"
+                    placeholder="Format"
+                    value={data.format}
+                    onChange={this.onChange}
+                  />
+                  {errors.format && <InlineError text={errors.format} />}
+                </Form.Field>
+                <Form.Field error={!!errors.format}>
+                  <label htmlFor="title">Publisher</label>
+                  <input
+                    type="text"
+                    id="publisher"
+                    name="publisher"
+                    placeholder="publisher"
+                    value={data.publisher}
+                    onChange={this.onChange}
+                  />
+                  {errors.publisher && <InlineError text={errors.publisher} />}
+                </Form.Field>
+                <Form.Field error={!!errors.format}>
+                  <label htmlFor="title">Publication Date</label>
+                  <p>{`${data.publication_day}/${data.publication_month}/${data.publication_year}`}</p>
+                </Form.Field>
               </Grid.Column>
               <Grid.Column>
                 <Image size="small" src={data.cover} />
@@ -159,6 +210,7 @@ class BookForm extends Component {
                     Another cover
                   </a>
                 )}
+                <p>{data.rating}</p>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -179,6 +231,13 @@ BookForm.propTypes = {
     authors: PropTypes.string.isRequired,
     covers: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     pages: PropTypes.number,
+    rating: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    format: PropTypes.string.isRequired,
+    publication_day: PropTypes.string.isRequired,
+    publication_month: PropTypes.string.isRequired,
+    publication_year: PropTypes.string.isRequired,
+    publisher: PropTypes.string.isRequired,
   }).isRequired,
   check: PropTypes.bool.isRequired
 };

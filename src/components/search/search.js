@@ -39,7 +39,7 @@ class Search extends Component {
           placeholder="Search books"
           onChange={this.handleChange}
         />
-        <DropdownBookList books={this.state.books}/>
+        <DropdownBookList books={this.state.books} query={this.state.query} />
       </>
     );
   }

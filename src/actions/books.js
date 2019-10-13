@@ -18,7 +18,9 @@ const bookRemoval = id => ({
   id
 });
 
-export const search = title => () => api.books.search(title);
+export const search = (title) => () => api.books.search(title);
+
+export const searchByPage = (title, pageNum) => () => api.books.searchByPage(title, pageNum);
 
 export const fetchBookData = id => () => api.books.fetchBookData(id);
 

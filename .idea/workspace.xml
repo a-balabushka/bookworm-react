@@ -8,10 +8,8 @@
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/book-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/book-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/new-book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/new-book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/dropdown-book-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/dropdown-book-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +167,12 @@
       <workItem from="1570650945970" duration="8872000" />
       <workItem from="1570689581772" duration="12414000" />
       <workItem from="1570711302713" duration="8723000" />
-      <workItem from="1570807827373" duration="5956000" />
+      <workItem from="1570807827373" duration="10230000" />
+      <workItem from="1570872172506" duration="1787000" />
+      <workItem from="1570878322963" duration="7783000" />
+      <workItem from="1570892896605" duration="7922000" />
+      <workItem from="1570903404637" duration="10828000" />
+      <workItem from="1570960254339" duration="5470000" />
     </task>
     <servers />
   </component>

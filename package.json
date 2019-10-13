@@ -7,6 +7,7 @@
     "jwt-decode": "^2.2.0",
     "normalizr": "^3.4.1",
     "prop-types": "^15.7.2",
+    "query-string": "^6.8.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-loader": "^2.4.5",

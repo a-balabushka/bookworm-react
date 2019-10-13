@@ -18,6 +18,7 @@ import { fetchCurrentUser } from "./actions/users";
 
 import "semantic-ui-css/semantic.min.css";
 import BookPage from "./components/pages/book-page";
+import SearchAllResultPage from "./components/pages/search-all-result-page";
 
 class App extends Component {
   componentDidMount() {
@@ -81,6 +82,13 @@ class App extends Component {
             path="/books/new/:id"
             exact
             component={BookPage}
+          />
+          <UserRoute
+            location={location}
+            // path="/search?q=query&page=page"
+            path="/search"
+            exact
+            component={SearchAllResultPage}
           />
         </Loader>
       </div>

@@ -9,7 +9,7 @@ class BookPage extends Component {
     loadingBook: true
   };
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.fetchBook();
   };
 

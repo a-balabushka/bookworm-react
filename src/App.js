@@ -13,12 +13,11 @@ import ResetPasswordPage from "./components/pages/reset-password-page";
 import NewBookPage from "./components/pages/new-book-page";
 import UserRoute from "./components/routes/user-route";
 import GuestRoute from "./components/routes/guest-route";
-import TopNavigation from "./components/navigation/top-navigation";
+import TopNavigation from "./components/navigation/top-navigation/top-navigation";
 import { fetchCurrentUser } from "./actions/users";
 
-import "semantic-ui-css/semantic.min.css";
 import BookPage from "./components/pages/book-page";
-import SearchAllResultPage from "./components/pages/search-all-result-page";
+import SearchAllResultPage from "./components/pages/search-all-results-page/search-all-result-page";
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +30,7 @@ class App extends Component {
     const { location, isAuthenticated, loaded } = this.props;
 
     return (
-      <div className="ui container">
+      <div>
         <Loader loaded={loaded}>
           {isAuthenticated && <TopNavigation />}
           <Route location={location} path="/" exact component={HomePage} />
@@ -85,9 +84,7 @@ class App extends Component {
           />
           <UserRoute
             location={location}
-            // path="/search?q=query&page=page"
             path="/search"
-            exact
             component={SearchAllResultPage}
           />
         </Loader>

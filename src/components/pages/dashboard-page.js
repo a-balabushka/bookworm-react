@@ -9,7 +9,7 @@ import { fetchBooks } from '../../actions/books';
 
 class DashboardPage extends Component {
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.onInit(this.props).then(() => {
       localStorage.addedUserBooksId = this.createBookIdList();
     });

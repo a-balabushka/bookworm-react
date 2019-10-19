@@ -10,7 +10,6 @@ import SignUpPage from "./components/pages/signup-page";
 import ConfirmationPage from "./components/pages/confirmation-page";
 import ForgotPasswordPage from "./components/pages/forgot-password-page";
 import ResetPasswordPage from "./components/pages/reset-password-page";
-import NewBookPage from "./components/pages/new-book-page";
 import UserRoute from "./components/routes/user-route";
 import GuestRoute from "./components/routes/guest-route";
 import TopNavigation from "./components/navigation/top-navigation/top-navigation";
@@ -69,12 +68,6 @@ class App extends Component {
             path="/dashboard"
             exact
             component={DashboardPage}
-          />
-          <UserRoute
-            location={location}
-            path="/books/new"
-            exact
-            component={NewBookPage}
           />
           <UserRoute
             location={location}

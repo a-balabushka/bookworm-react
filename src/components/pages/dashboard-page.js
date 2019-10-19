@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ConfirmEmailMessage from "../messages/confirm-email-message";
 import { allBooksSelector } from "../../reducers/books";
-import AddBook from "../ctas/add-book";
 import UserBooksPage from "../pages/user-books-page";
 import { fetchBooks } from "../../actions/books";
 
@@ -19,7 +18,7 @@ class DashboardPage extends Component {
     return (
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
-        {books.length === 0 ? <AddBook /> : <UserBooksPage books={books} />}
+        {books.length === 0 ? <h3>No books(</h3> : <UserBooksPage books={books} />}
       </div>
     );
   }

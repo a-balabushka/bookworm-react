@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { search } from "../../../actions/books";
 
 import SearchLoading from "../search-loading/search-loading";
-import DropdownBookList from "../dropdown-book-list/dropdown-book-list";
+import DropdownBookList from "../../lists/dropdown-book-list/dropdown-book-list";
 
 import { StyledSearch, StyledSearchInput } from "./style";
 

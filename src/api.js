@@ -32,6 +32,8 @@ export default {
     addLike: id => axios.post('/api/books/add_like', { id })
       .then(res => res.data.like),
     deleteLike: id => axios.post('/api/books/delete_like', { id })
-      .then(res => res.data.like)
+      .then(res => res.data.like),
+    fetchLikes: () => axios.get('/api/books/top_likes')
+      .then(res => res.data.books)
   }
 }

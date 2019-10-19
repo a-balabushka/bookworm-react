@@ -1,10 +1,11 @@
 import { createSelector } from "reselect";
-import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL } from "../types";
+import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, LIKES_FETHCED } from "../types";
 
 export default function books(state = {}, action = {}) {
   switch (action.type) {
     case BOOKS_FETCHED:
     case BOOK_CREATED:
+    case LIKES_FETHCED:
       return { ...state, ...action.data.entities.books };
     case BOOK_REMOVAL:
       const newState = Object.assign({}, state);

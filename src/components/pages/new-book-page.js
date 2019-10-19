@@ -10,8 +10,7 @@ class NewBookPage extends Component {
 
   state = {
     book: null,
-    loadingBook: false,
-    list: JSON.parse(localStorage.addedUserBooksId)
+    loadingBook: false
   };
 
   change = (data) =>

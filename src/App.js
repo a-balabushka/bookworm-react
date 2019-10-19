@@ -16,7 +16,7 @@ import GuestRoute from "./components/routes/guest-route";
 import TopNavigation from "./components/navigation/top-navigation/top-navigation";
 import { fetchCurrentUser } from "./actions/users";
 
-import BookPage from "./components/pages/book-page";
+import BookPage from "./components/pages/book-page/book-page";
 import SearchAllResultPage from "./components/pages/search-all-results-page/search-all-result-page";
 
 class App extends Component {

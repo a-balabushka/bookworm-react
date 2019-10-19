@@ -20,12 +20,18 @@ export default {
     searchByPage: (title, pageNum) => axios.get(`/api/books/search_by_page?q=${title}&page=${pageNum}`)
       .then(res => res.data),
     fetchBookData: (id) => axios.get(`/api/books/fetch_book_data?goodreadsId=${id}`)
-      .then(res => res.data),
+      .then(res => res.data.book),
     fetchAll: () => axios.get('/api/books')
       .then(res => res.data.books),
     create: book => axios.post('/api/books', { book })
       .then(res => res.data.book),
     delete: id => axios.post('/api/books/delete_book', { id })
-      .then(res => res.data.id)
+      .then(res => res.data.id),
+    checkLike: id => axios.get('/api/books/check_like', { params: { id } })
+      .then(res => res.data.result),
+    addLike: id => axios.post('/api/books/add_like', { id })
+      .then(res => res.data.like),
+    deleteLike: id => axios.post('/api/books/delete_like', { id })
+      .then(res => res.data.like)
   }
 }

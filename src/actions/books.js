@@ -1,5 +1,5 @@
 import { normalize } from "normalizr";
-import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL } from "../types";
+import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, ADD_LIKE, DELETE_LIKE } from "../types";
 import api from "../api";
 import { bookSchema } from "../schemas";
 
@@ -38,3 +38,9 @@ export const deleteBook = id => dispatch =>
   api.books.delete(id).then(bookId => {
     dispatch(bookRemoval(bookId));
   });
+
+export const checkLike = id => () => api.books.checkLike(id);
+
+export const deleteLike = id => () => api.books.deleteLike(id);
+
+export const addLike = id => () => api.books.addLike(id);

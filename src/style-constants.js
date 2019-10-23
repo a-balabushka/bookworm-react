@@ -7,3 +7,5 @@ export const borderColor = searchColor;
 /* ================= BORDER ================== */
 
 export const border = `1px solid ${searchColor}`;
+
+export const sectionWidth = "75%";

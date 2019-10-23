@@ -55,3 +55,5 @@ export const getTopLikes = () => dispatch => {
     dispatch(likesFetched(normalize(books, [bookSchema])));
   })
 };
+
+export const checkRead = id => () => api.books.checkRead(id);

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { headerBackground } from "../../../style-constants";
 
 export const StyledHeader = styled.header`
-  width: 100%;
   height: 50px;
   
   display: flex;

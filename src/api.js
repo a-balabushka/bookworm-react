@@ -26,7 +26,7 @@ export default {
     create: book => axios.post('/api/books', { book })
       .then(res => res.data.book),
     delete: id => axios.post('/api/books/delete_book', { id })
-      .then(res => res.data.id),
+      .then(res => res.data.readStatus),
     checkLike: id => axios.get('/api/books/check_like', { params: { id } })
       .then(res => res.data.result),
     addLike: id => axios.post('/api/books/add_like', { id })
@@ -34,6 +34,8 @@ export default {
     deleteLike: id => axios.post('/api/books/delete_like', { id })
       .then(res => res.data.like),
     fetchLikes: () => axios.get('/api/books/top_likes')
-      .then(res => res.data.books)
+      .then(res => res.data.books),
+    checkRead: id => axios.get('/api/books/check_read_book', { params: { id } })
+      .then(res => res.data.result),
   }
 }

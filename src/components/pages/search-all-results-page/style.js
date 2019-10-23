@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import { border } from "../../../style-constants";
+import { border , sectionWidth } from "../../../style-constants";
 
 export const StyledSection = styled.section`
   margin: 0 auto;
-  width: 75%;
+  width: ${sectionWidth};
 `;
 
 export const StyledHeadingH1 = styled.h1`
@@ -22,7 +22,6 @@ export const StyledSearchInput = styled.input`
   border: ${border};
   box-sizing: border-box;
   padding: 0.25rem;
-  font-family: Sahitya;
   outline: none;
 `;
 

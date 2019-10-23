@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchBookData, createBook } from "../../../actions/books";
+import { fetchBookData, checkRead, checkLike } from "../../../actions/books";
 
-import LikeForm from "../../forms/like-form/like-form";
+import LikeButton from "../../buttons/like-button/like-button";
+import ReadButton from "../../buttons/read-button/read-button";
+import DeleteButton from "../../buttons/delete-button/delete-button";
 
 class BookPage extends Component {
   state = {
     book: null,
+    readStatus: false,
+    likeStatus: false,
     loadingBook: true,
     errors: {}
   };
@@ -27,39 +31,59 @@ class BookPage extends Component {
 
   fetchBook = () => {
     const { id } = this.props.match.params;
-    this.props.fetchBookData(id).then(data =>
-      this.setState({
-        book: {
-          ...data
-        },
-        loadingBook: false
-      })
-    );
-  };
-
-  onSubmit = e => {
-    e.preventDefault();
-    this.props.createBook(this.state.book).catch(err => {
-      this.setState({
-        loadingBook: false,
-        errors: err.response.data.errors
-      });
+    this.props.fetchBookData(id).then(data => {
+      this.checkReadStatus(data.goodreadsId);
+      this.checkLikeStatus(data.goodreadsId);
+      this.setState({ book: { ...data }, loadingBook: false });
     });
   };
 
+  checkReadStatus = goodreadsId => {
+    this.props
+      .checkRead(goodreadsId)
+      .then(result => this.setState({ readStatus: result }));
+  };
+
+  checkLikeStatus = goodreadsId => {
+    this.props
+      .checkLike(goodreadsId)
+      .then(result => this.setState({ likeStatus: result }));
+  };
+
+  updateErrors = value => this.setState({ errors: value });
+
   render() {
-    const { book } = this.state;
+    const { book, readStatus, likeStatus } = this.state;
     return this.state.loadingBook ? (
       <h2>Loading...</h2>
     ) : (
       <section>
-        <form onSubmit={this.onSubmit}>
-          <h2>{book.title}</h2>
-          <img src={book.image_url} alt={`${book.title} cover`} />
-          <div>
-            <button>Save</button>
-          </div>
-          {/*<div>{book.goodreadsId}</div>
+        <h2>{book.title}</h2>
+        <img src={book.image_url} alt={`${book.title} cover`} />
+        <div>
+          {readStatus ? (
+            <DeleteButton
+              id={book.goodreadsId}
+              updateErrors={this.updateErrors}
+              updateReadStatus={value => this.setState({ readStatus: value})}
+            />
+          ) : (
+            <ReadButton
+              book={book}
+              updateErrors={this.updateErrors}
+              updateReadStatus={value => this.setState({ readStatus: value})}
+            />
+          )}
+        </div>
+        <div>
+          <LikeButton
+            id={book.goodreadsId}
+            likeStatus={likeStatus}
+            updateErrors={this.updateErrors}
+            updateLike={value => this.setState({ likeStatus: value })}
+          />
+        </div>
+        {/*<div>{book.goodreadsId}</div>
         <div>{book.description}</div>
         <div>{book.authors}</div>
         <div>{book.average_rating}</div>
@@ -67,8 +91,6 @@ class BookPage extends Component {
         <div>{book.publisher}</div>
         <div>{book.publication_month} / {book.publication_day} / {book.publication_year}</div>
         <div>{book.format}</div>*/}
-        </form>
-        <LikeForm id={book.goodreadsId} />
       </section>
     );
   }
@@ -81,10 +103,11 @@ BookPage.propTypes = {
     }).isRequired
   }).isRequired,
   fetchBookData: PropTypes.func.isRequired,
-  createBook: PropTypes.func.isRequired,
+  checkRead: PropTypes.func.isRequired,
+  checkLike: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-  { fetchBookData, createBook }
+  { fetchBookData, checkRead, checkLike }
 )(BookPage);

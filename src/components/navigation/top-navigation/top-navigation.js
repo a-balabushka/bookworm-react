@@ -40,7 +40,6 @@ import Search from "../../search/search/search";
 
 import menuLogo from "../../../img/menu.png";
 import vectorGR from "../../../img/vector.png";
-import notificationNone from "../../../img/notifications_none.png";
 import permIndentity from "../../../img/perm_identity.png";
 
 const TopNavigation = ({ user, logout, hasBooks }) => (
@@ -50,7 +49,6 @@ const TopNavigation = ({ user, logout, hasBooks }) => (
       <StyledIcon src={vectorGR} alt="Go to main page" />
     </Link>
       <Search />
-    <StyledIcon src={notificationNone} alt="Your notification" />
     <StyledIcon src={permIndentity} alt=""/>
   </StyledHeader>
 );

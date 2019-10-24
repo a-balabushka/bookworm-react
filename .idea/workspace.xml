@@ -5,13 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/like-form/like-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/notifications_none.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style-constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style-constants.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +194,9 @@
       <workItem from="1571509817309" duration="7026000" />
       <workItem from="1571562665214" duration="20701000" />
       <workItem from="1571817591057" duration="814000" />
-      <workItem from="1571831480746" duration="4111000" />
+      <workItem from="1571831480746" duration="12210000" />
+      <workItem from="1571922356256" duration="7610000" />
+      <workItem from="1571945285650" duration="4118000" />
     </task>
     <servers />
   </component>

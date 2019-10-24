@@ -37,5 +37,7 @@ export default {
       .then(res => res.data.books),
     checkRead: id => axios.get('/api/books/check_read_book', { params: { id } })
       .then(res => res.data.result),
+    saveProgress: (num, id) => axios.post('/api/books/save_progress', { num, id })
+      .then(res => res.data.readPages)
   }
 }

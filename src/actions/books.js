@@ -57,3 +57,5 @@ export const getTopLikes = () => dispatch => {
 };
 
 export const checkRead = id => () => api.books.checkRead(id);
+
+export const saveProgress = (num, id) => () => api.books.saveProgress(num, id);

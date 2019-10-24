@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchBookData, checkRead, checkLike } from "../../../actions/books";
+import { fetchBookData, checkRead, checkLike, saveProgress } from "../../../actions/books";
 
 import LikeButton from "../../buttons/like-button/like-button";
 import ReadButton from "../../buttons/read-button/read-button";
 import DeleteButton from "../../buttons/delete-button/delete-button";
+import ReadProgressWidget from "../../widgets/read-progress-widget/read-progress-widget";
 
 class BookPage extends Component {
   state = {
@@ -32,8 +33,9 @@ class BookPage extends Component {
   fetchBook = () => {
     const { id } = this.props.match.params;
     this.props.fetchBookData(id).then(data => {
-      this.checkReadStatus(data.goodreadsId);
-      this.checkLikeStatus(data.goodreadsId);
+      const { goodreadsId } = data;
+      this.checkReadStatus(goodreadsId);
+      this.checkLikeStatus(goodreadsId);
       this.setState({ book: { ...data }, loadingBook: false });
     });
   };
@@ -41,7 +43,12 @@ class BookPage extends Component {
   checkReadStatus = goodreadsId => {
     this.props
       .checkRead(goodreadsId)
-      .then(result => this.setState({ readStatus: result }));
+      .then(result =>
+        this.setState({
+          readStatus: result.read,
+          book: { ...this.state.book, readPages: result.readPages }
+        })
+      );
   };
 
   checkLikeStatus = goodreadsId => {
@@ -52,14 +59,31 @@ class BookPage extends Component {
 
   updateErrors = value => this.setState({ errors: value });
 
+  updateReadPages = readPages => {
+    this.setState({
+      book: { ...this.state.book, readPages }
+    });
+  };
+
   render() {
     const { book, readStatus, likeStatus } = this.state;
+
     return this.state.loadingBook ? (
       <h2>Loading...</h2>
     ) : (
       <section>
         <h2>{book.title}</h2>
         <img src={book.image_url} alt={`${book.title} cover`} />
+        <div>
+          <ReadProgressWidget
+            pages={book.pages}
+            readPages={book.readPages}
+            goodreadsId={book.goodreadsId}
+            updateErrors={this.updateErrors}
+            updateReadPages={this.updateReadPages}
+          />
+        </div>
+
         <div>
           {readStatus ? (
             <DeleteButton
@@ -109,5 +133,5 @@ BookPage.propTypes = {
 
 export default connect(
   null,
-  { fetchBookData, checkRead, checkLike }
+  { fetchBookData, checkRead, checkLike, saveProgress }
 )(BookPage);

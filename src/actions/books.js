@@ -1,5 +1,5 @@
 import { normalize } from "normalizr";
-import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, LIKES_FETHCED } from "../types";
+import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, TOP_FETHCED } from "../types";
 import api from "../api";
 import { bookSchema } from "../schemas";
 
@@ -13,13 +13,13 @@ const bookCreated = data => ({
   data
 });
 
-const bookRemoval = id => ({
+const bookRemoval = data => ({
   type: BOOK_REMOVAL,
-  id
+  id: data.id
 });
 
-const likesFetched = data => ({
-  type: LIKES_FETHCED,
+const topFetched = data => ({
+  type: TOP_FETHCED,
   data
 });
 
@@ -50,9 +50,9 @@ export const deleteLike = id => () => api.books.deleteLike(id);
 
 export const addLike = id => () => api.books.addLike(id);
 
-export const getTopLikes = () => dispatch => {
-  api.books.fetchLikes().then(books => {
-    dispatch(likesFetched(normalize(books, [bookSchema])));
+export const getTop = () => dispatch => {
+  api.books.getTop().then(books => {
+    dispatch(topFetched(normalize(books, bookSchema)));
   })
 };
 

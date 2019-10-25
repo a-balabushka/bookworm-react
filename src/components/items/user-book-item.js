@@ -5,7 +5,7 @@ import { Form, Button } from 'semantic-ui-react';
 class UserBookItem extends Component {
   onSubmit = e => {
     e.preventDefault();
-    this.props.submit(this.props.book._id)
+    this.props.submit(this.props.book.goodreadsId)
       .catch((e) => console.log(e))
   };
 

@@ -26,14 +26,14 @@ export default {
     create: book => axios.post('/api/books', { book })
       .then(res => res.data.book),
     delete: id => axios.post('/api/books/delete_book', { id })
-      .then(res => res.data.readStatus),
+      .then(res => res.data),
     checkLike: id => axios.get('/api/books/check_like', { params: { id } })
       .then(res => res.data.result),
     addLike: id => axios.post('/api/books/add_like', { id })
       .then(res => res.data.like),
     deleteLike: id => axios.post('/api/books/delete_like', { id })
       .then(res => res.data.like),
-    fetchLikes: () => axios.get('/api/books/top_likes')
+    getTop: () => axios.get('/api/books/get_top')
       .then(res => res.data.books),
     checkRead: id => axios.get('/api/books/check_read_book', { params: { id } })
       .then(res => res.data.result),

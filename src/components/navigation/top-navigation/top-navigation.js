@@ -38,13 +38,11 @@ import { allBooksSelector } from "../../../reducers/books";
 import { StyledHeader, StyledMenuIcon, StyledIcon } from "./style";
 import Search from "../../search/search/search";
 
-import menuLogo from "../../../img/menu.png";
 import vectorGR from "../../../img/vector.png";
 import permIndentity from "../../../img/perm_identity.png";
 
 const TopNavigation = ({ user, logout, hasBooks }) => (
   <StyledHeader>
-    <StyledMenuIcon src={menuLogo} alt="Menu" />
     <Link to="/">
       <StyledIcon src={vectorGR} alt="Go to main page" />
     </Link>

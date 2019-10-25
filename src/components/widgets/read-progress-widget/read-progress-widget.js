@@ -40,7 +40,7 @@ class ReadProgressWidget extends Component {
             type="text"
             name="readPages"
             id="readPages"
-            defaultValue={readPages}
+            defaultValue={readPages ? readPages : 0}
             onChange={this.onChange}
           />
           <span>of {pages}</span>
@@ -50,8 +50,8 @@ class ReadProgressWidget extends Component {
       </div>
     ) : (
       <div>
-        <StyledProgress value={readPages} max={pages} />
-        <StyledStat>{readPages}/{pages}</StyledStat>
+        <StyledProgress value={readPages ? readPages : 0} max={pages} />
+        <StyledStat>{readPages ? readPages : 0}/{pages}</StyledStat>
         <StyledButton onClick={() => this.setState({ visibilityProgress: true })}>Update progress</StyledButton>
       </div>
     );

@@ -27,6 +27,7 @@ import {
 
 import starBorder from "../../../img/star_border.png";
 import star from "../../../img/star.png";
+import { allBooksSelector } from "../../../reducers/books";
 
 class BookPage extends Component {
   state = {
@@ -173,7 +174,13 @@ BookPage.propTypes = {
   checkLike: PropTypes.func.isRequired
 };
 
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.user.email
+  };
+}
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchBookData, checkRead, checkLike }
 )(BookPage);

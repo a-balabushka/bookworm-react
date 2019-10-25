@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 import Loader from "react-loader";
-import HomePage from "./components/pages/home-page";
+import HomePage from "./components/pages/home-page/home-page";
 import LoginPage from "./components/pages/login-page";
 import DashboardPage from "./components/pages/dashboard-page";
 import SignUpPage from "./components/pages/signup-page";

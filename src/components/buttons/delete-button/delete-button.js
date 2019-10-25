@@ -9,7 +9,7 @@ const DeleteButton = ({ id, deleteBook, updateReadStatus, updateErrors }) => {
   const onSubmit = e => {
     e.preventDefault();
     deleteBook(id)
-      .then(result => updateReadStatus(result))
+      .then(result => updateReadStatus(result.readStatus))
       .catch(err => updateErrors(err.response.data.errors));
   };
 

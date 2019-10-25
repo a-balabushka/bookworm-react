@@ -4,23 +4,26 @@ import { Pagination } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { searchByPage } from "../../../actions/books";
 
-import SearchAllResultsItem from "../../items/search-all-results-item/search-all-results-item";
+import SearchAllResultsList from "../../lists/search-all-results-list/search-all-results-list";
+import CenterLoading from "../../loaders/center-loader/center-loader";
+
 import {
-  StyledSection,
+  StyledContainer,
   StyledHeadingH1,
   StyledSearchForm,
   StyledSearchInput,
   StyledSearchButton,
-  PaginationDiv
+  PaginationDiv,
+  StyledResults
 } from "./style";
 
+import "./pagination.css";
 class SearchAllResultPage extends Component {
   state = {
     books: null,
     query: queryString.parse(this.props.location.search),
     inputValue: null,
     queryTimeSeconds: null,
-    pageCount: null,
     totalResults: null,
     loading: false
   };
@@ -51,7 +54,7 @@ class SearchAllResultPage extends Component {
       );
   };
 
-  onPageChange = (e, data) => {
+  handlePageChange = (e, data) => {
     this.setState({
       query: {
         ...this.state.query,
@@ -84,49 +87,42 @@ class SearchAllResultPage extends Component {
       totalResults,
       queryTimeSeconds
     } = this.state;
-    return (
-      <>
-        {loading ? (
-          <h1>Loading...</h1>
-        ) : (
-          <StyledSection>
-            <StyledHeadingH1>Search</StyledHeadingH1>
-            <StyledSearchForm onSubmit={this.onSubmit}>
-              <StyledSearchInput
-                type="text"
-                id="inputValue"
-                name="inputValue"
-                placeholder="Search by Book Title"
-                defaultValue={this.state.query.q}
-                onChange={this.onChange}
-              />
-              <StyledSearchButton>Search</StyledSearchButton>
-            </StyledSearchForm>
-            <span>
-              Page {query.page} of about {totalResults} results (
-              {queryTimeSeconds} seconds)
-            </span>
-            <hr />
-            {books &&
-              books.map(item => (
-                <SearchAllResultsItem book={item} key={item.goodreadsId} />
-              ))}
-              <PaginationDiv>
-                <Pagination
-                  boundaryRange={0}
-                  activePage={this.state.query.page}
-                  defaultActivePage={this.state.query.page}
-                  ellipsisItem={null}
-                  firstItem={null}
-                  lastItem={null}
-                  siblingRange={1}
-                  totalPages={4}
-                  onPageChange={this.onPageChange}
-                />
-              </PaginationDiv>
-          </StyledSection>
-        )}
-      </>
+    return loading ? (
+      <CenterLoading />
+    ) : (
+      <StyledContainer>
+        <StyledHeadingH1>Search</StyledHeadingH1>
+        <StyledSearchForm onSubmit={this.onSubmit}>
+          <StyledSearchInput
+            type="text"
+            id="inputValue"
+            name="inputValue"
+            placeholder="Search by Book Title"
+            defaultValue={this.state.query.q}
+            onChange={this.onChange}
+          />
+          <StyledSearchButton>Search</StyledSearchButton>
+        </StyledSearchForm>
+        <StyledResults>
+          Page {query.page} of about {totalResults} results ({queryTimeSeconds}{" "}
+          seconds)
+        </StyledResults>
+        <hr />
+        <SearchAllResultsList books={books} />
+        <hr />
+        <PaginationDiv>
+          <Pagination
+            boundaryRange={0}
+            activePage={this.state.query.page}
+            ellipsisItem={null}
+            firstItem={null}
+            lastItem={null}
+            siblingRange={2}
+            totalPages={20}
+            onPageChange={this.handlePageChange}
+          />
+        </PaginationDiv>
+      </StyledContainer>
     );
   }
 }

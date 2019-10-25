@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-import { borderColor } from "../../../style-constants";
+import { borderColor, sectionWidth } from "../../../style-constants";
 
 export const StyledSection = styled.div`
   margin: 3em auto;
-  width: 1024px;
+  width: ${sectionWidth};
   display: flex;
   flex-wrap: wrap;
 `;

@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/items/top-likes-item/top-likes-item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/items/user-book-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/user-book-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/top-likes-list/top-likes-list.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/items/search-all-results-item/search-all-results-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/search-all-results-item/search-all-results-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/items/search-all-results-item/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/search-all-results-item/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style-constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/style-constants.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +24,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -52,6 +45,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -210,7 +204,8 @@
       <workItem from="1571922356256" duration="7610000" />
       <workItem from="1571945285650" duration="23311000" />
       <workItem from="1571993087545" duration="16963000" />
-      <workItem from="1572020609815" duration="839000" />
+      <workItem from="1572020609815" duration="5444000" />
+      <workItem from="1572026792073" duration="11880000" />
     </task>
     <servers />
   </component>

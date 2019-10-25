@@ -1,20 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Rating from "react-rating";
 
-import { StyledSearchArticle, StyledDataDiv } from "./style";
+import { StyledSearchArticle, StyledCover, StyledDataDiv, StyledTitle, StyledAuthor, StyledRating, StyledRatingNum } from "./style";
+
+import starBorder from "../../../img/star_border.png";
+import star from "../../../img/star.png";
 
 const SearchAllResultsItem = ({ book }) => {
   return (
-    <Link to={{ pathname: `/books/new/${book.goodreadsId}` }}>
+    <Link to={{ pathname: `/books/new/${book.goodreadsId}` }}
+          style={{ textDecoration: "none" }}
+    >
       <StyledSearchArticle>
         <div>
-          <img src={book.image_url} alt=""/>
+          <StyledCover src={book.image_url} alt="" />
         </div>
         <StyledDataDiv>
-          <div>{book.title}</div>
-          <div>by {book.authors}</div>
-          <div>Rating: {book.rating}</div>
+          <StyledTitle>{book.title}</StyledTitle>
+          <StyledAuthor>by {book.authors}</StyledAuthor>
+          <StyledRating>
+            <Rating
+              initialRating={book.rating}
+              emptySymbol={<img src={starBorder} alt="star" />}
+              fullSymbol={<img src={star} alt="star" />}
+              readonly
+            />
+            <StyledRatingNum>{book.rating}</StyledRatingNum>
+          </StyledRating>
         </StyledDataDiv>
       </StyledSearchArticle>
     </Link>

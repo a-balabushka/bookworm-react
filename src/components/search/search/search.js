@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { search } from "../../../actions/books";
 
-import SearchLoading from "../search-loading/search-loading";
+import SearchLoading from "../../loaders/search-loading/search-loading";
 import DropdownBookList from "../../lists/dropdown-book-list/dropdown-book-list";
 
 import { StyledSearch, StyledSearchInput } from "./style";

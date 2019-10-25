@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createBook } from "../../../actions/books";
 
+import { StyledButton } from './style';
+
 const ReadButton = ({ book, createBook, updateReadStatus, updateErrors }) => {
   const onSubmit = e => {
     e.preventDefault();
@@ -11,11 +13,11 @@ const ReadButton = ({ book, createBook, updateReadStatus, updateErrors }) => {
       .catch(err => updateErrors(err.response.data.errors));
   };
 
-  return <button onClick={onSubmit}>Read</button>;
+  return <StyledButton onClick={onSubmit}>Read</StyledButton>;
 };
 
 ReadButton.propTypes = {
-  book: PropTypes.shape().isRequired, // TODO дописать shape
+  book: PropTypes.shape().isRequired,
   createBook: PropTypes.func.isRequired,
   updateReadStatus: PropTypes.func.isRequired,
   updateErrors: PropTypes.func.isRequired

@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { saveProgress } from "../../../actions/books";
 
+import { StyledStat, StyledButton, StyledProgress, StyledInput, StyledDiv } from "./style";
+
 class ReadProgressWidget extends Component {
   state = {
-    readPages: null,
     visibilityProgress: false
   };
 
@@ -33,22 +34,25 @@ class ReadProgressWidget extends Component {
     const { visibilityProgress } = this.state;
     return visibilityProgress ? (
       <div>
-        <input
-          type="text"
-          name="readPages"
-          id="readPages"
-          defaultValue={readPages}
-          onChange={this.onChange}
-        />
-        <span>of {pages}</span>
-        <button onClick={this.saveProgressClick}>Save</button>
+        <StyledDiv>
+          <span>Currently on </span>
+          <StyledInput
+            type="text"
+            name="readPages"
+            id="readPages"
+            defaultValue={readPages}
+            onChange={this.onChange}
+          />
+          <span>of {pages}</span>
+        </StyledDiv>
+
+        <StyledButton onClick={this.saveProgressClick}>Save</StyledButton>
       </div>
     ) : (
       <div>
-        <progress value={readPages} max={pages} />
-        <button onClick={() => this.setState({ visibilityProgress: true })}>
-          Update progress
-        </button>
+        <StyledProgress value={readPages} max={pages} />
+        <StyledStat>{readPages}/{pages}</StyledStat>
+        <StyledButton onClick={() => this.setState({ visibilityProgress: true })}>Update progress</StyledButton>
       </div>
     );
   }
@@ -59,7 +63,8 @@ ReadProgressWidget.propTypes = {
   readPages: PropTypes.number.isRequired,
   goodreadsId: PropTypes.string.isRequired,
   updateErrors: PropTypes.func.isRequired,
-  updateReadPages: PropTypes.func.isRequired
+  updateReadPages: PropTypes.func.isRequired,
+  saveProgress: PropTypes.func.isRequired
 };
 
 export default connect(

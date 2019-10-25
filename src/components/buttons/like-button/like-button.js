@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addLike, deleteLike } from "../../../actions/books";
 
+import { StyledButton } from "./style";
+
 const LikeButton = ({
   id,
   likeStatus,
@@ -24,7 +26,7 @@ const LikeButton = ({
     }
   };
 
-  return <button onClick={onSubmit}>{likeStatus ? "Dislike" : "Like"}</button>;
+  return <StyledButton onClick={onSubmit}>{likeStatus ? "Dislike" : "Like"}</StyledButton>;
 };
 
 LikeButton.propTypes = {

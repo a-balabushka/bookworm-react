@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { border , sectionWidth, boxShadowButton, wordsColorButton, accentColorButton } from "../../../style-constants";
+import { border, sectionWidth, boxShadowButton, wordsColorButton, accentColorButton } from "../../../style-constants";
 
 export const StyledContainer = styled.div`
   margin: 0 auto;

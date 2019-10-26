@@ -5,7 +5,7 @@ import { Route } from "react-router-dom";
 import Loader from "react-loader";
 import HomePage from "./components/pages/home-page/home-page";
 import LoginPage from "./components/pages/login-page";
-import DashboardPage from "./components/pages/dashboard-page";
+import DashboardPage from "./components/pages/dashboard-page/dashboard-page";
 import SignUpPage from "./components/pages/signup-page";
 import ConfirmationPage from "./components/pages/confirmation-page";
 import ForgotPasswordPage from "./components/pages/forgot-password-page";

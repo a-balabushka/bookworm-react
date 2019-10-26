@@ -30,7 +30,7 @@ export default {
     checkLike: id => axios.get('/api/books/check_like', { params: { id } })
       .then(res => res.data.result),
     addLike: id => axios.post('/api/books/add_like', { id })
-      .then(res => res.data.like),
+      .then(res => res.data.id),
     deleteLike: id => axios.post('/api/books/delete_like', { id })
       .then(res => res.data.like),
     getTop: () => axios.get('/api/books/get_top')
@@ -38,6 +38,6 @@ export default {
     checkRead: id => axios.get('/api/books/check_read_book', { params: { id } })
       .then(res => res.data.result),
     saveProgress: (num, id) => axios.post('/api/books/save_progress', { num, id })
-      .then(res => res.data.readPages)
+      .then(res => res.data)
   }
 }

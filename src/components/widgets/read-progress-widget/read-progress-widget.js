@@ -14,19 +14,10 @@ class ReadProgressWidget extends Component {
 
   saveProgressClick = e => {
     e.preventDefault();
-    const {
-      goodreadsId,
-      saveProgress,
-      updateReadPages,
-      updateErrors
-    } = this.props;
+    const { goodreadsId, saveProgress } = this.props;
     const readPages = parseInt(this.state.readPages);
     saveProgress(readPages, goodreadsId)
-      .then(readPages => {
-        updateReadPages(readPages);
-        this.setState({ visibilityProgress: false });
-      })
-      .catch(err => updateErrors(err.response.data.errors));
+      .then(() => this.setState({ visibilityProgress: false }));
   };
 
   render() {

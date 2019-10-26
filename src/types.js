@@ -5,3 +5,5 @@ export const BOOKS_FETCHED = 'BOOKS_FETCHED';
 export const BOOK_CREATED = 'BOOK_CREATED';
 export const BOOK_REMOVAL = 'BOOK_REMOVAL';
 export const TOP_FETHCED = 'TOP_FETHCED';
+export const ADD_LIKE = 'ADD_LIKE';
+export const CHANGE_PROGRESS = 'CHANGE_PROGRESS';

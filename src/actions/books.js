@@ -65,7 +65,7 @@ export const addLike = id => dispatch =>
 
 export const getTop = () => dispatch => {
   api.books.getTop().then(books => {
-    dispatch(topFetched(normalize(books, bookSchema)));
+    dispatch(topFetched(books));
   })
 };
 

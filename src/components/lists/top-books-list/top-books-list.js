@@ -3,15 +3,17 @@ import PropTypes from "prop-types";
 
 import TopBooksItem from "../../items/top-books-item/top-books-item";
 
-import { StyledSection } from './style';
+import { StyledSection } from "./style";
 
 const TopBooksList = ({ books, topLikes }) => {
   return (
     <Fragment>
-      <h2>{topLikes ?  "Top likes" : "Top reads"}</h2>
+      <h2>{topLikes ? "Top likes" : "Top reads"}</h2>
       <StyledSection>
         {books &&
-          books.map(item => <TopBooksItem key={item.goodreadsId} book={item} />)}
+          books.map(item => (
+            <TopBooksItem key={item.goodreadsId} book={item} />
+          ))}
       </StyledSection>
     </Fragment>
   );

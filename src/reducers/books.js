@@ -1,5 +1,12 @@
 import { createSelector } from "reselect";
-import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, TOP_FETHCED, ADD_LIKE, CHANGE_PROGRESS } from "../types";
+import {
+  BOOKS_FETCHED,
+  BOOK_CREATED,
+  BOOK_REMOVAL,
+  TOP_FETHCED,
+  ADD_LIKE,
+  CHANGE_PROGRESS
+} from "../types";
 
 const initialState = {
   loading: false,
@@ -10,11 +17,16 @@ const initialState = {
 export default function books(state = initialState, action = {}) {
   switch (action.type) {
     case BOOKS_FETCHED:
-      return { ...state, data: action.data.entities.books, loading: true, error: null };
+      return {
+        ...state,
+        data: action.data.entities.books,
+        loading: true,
+        error: null
+      };
     case BOOK_CREATED:
       return { ...state, ...action.data.entities.books };
     case TOP_FETHCED:
-      return { ...state, ...action.data.entities.books.undefined };
+      return { ...state, data: action.data, loading: true, error: null };
     case BOOK_REMOVAL:
       const newState = Object.assign({}, state);
       delete newState[action.id];

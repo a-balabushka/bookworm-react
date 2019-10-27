@@ -9,11 +9,6 @@ import TopBooksList from "../../lists/top-books-list/top-books-list";
 import { StyledContainer } from './style';
 
 class HomePage extends Component {
-  state = {
-    books: null,
-    loading: true
-  };
-
   componentDidMount() {
     this.onInit(this.props);
     this.setState({ loading: false });
@@ -22,15 +17,15 @@ class HomePage extends Component {
   onInit = (props) => props.getTop();
 
   render() {
-    const { books } = this.props;
+    const { books, loading } = this.props;
     return (
       <StyledContainer>
-        {this.state.loading ? (
+        {loading ? (
           <p>loading...</p>
         ) : (
           <>
-          <TopBooksList topLikes={true} books={books[0]} />
-          <TopBooksList topLikes={false} books={books[1]} />
+            <TopBooksList topLikes={true} books={books[0]} />
+            <TopBooksList topLikes={false} books={books[1]} />
           </>
         )}
       </StyledContainer>
@@ -45,7 +40,8 @@ HomePage.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    books: allBooksSelector(state)
+    books: allBooksSelector(state),
+    loading: state.loading
   };
 }
 

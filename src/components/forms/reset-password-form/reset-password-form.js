@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button } from "semantic-ui-react";
-import InlineError from '../messages/inline-error';
+import InlineError from '../../messages/inline-error';
+
+import * as S from "./style";
 
 class ResetPasswordForm extends Component {
 
@@ -15,7 +16,7 @@ class ResetPasswordForm extends Component {
     errors: {}
   };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     const { data } = this.state;
     const errors = this.validate(data);
@@ -66,10 +67,10 @@ class ResetPasswordForm extends Component {
     const { data, loading, errors } = this.state;
 
     return (
-      <Form onSubmit={this.onSubmit} loading={loading}>
-        <Form.Field error={ !!errors.password }>
-          <label htmlFor="password">Password</label>
-          <input
+      <S.Container onSubmit={this.onSubmit}>
+        <S.Header> Reset password </S.Header>
+        <S.FormField error={ !!errors.password }>
+          <S.FormInput
             type="password"
             id="password"
             name="password"
@@ -78,11 +79,10 @@ class ResetPasswordForm extends Component {
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={ errors.password } />}
-        </Form.Field>
+        </S.FormField>
 
-        <Form.Field error={ !!errors.password }>
-          <label htmlFor="passwordConfirmation">Confirm your new password</label>
-          <input
+        <S.FormField error={ !!errors.password }>
+          <S.FormInput
             type="password"
             id="passwordConfirmation"
             name="passwordConfirmation"
@@ -91,9 +91,9 @@ class ResetPasswordForm extends Component {
             onChange={this.onChange}
           />
           {errors.passwordConfirmation && <InlineError text={ errors.passwordConfirmation } />}
-        </Form.Field>
-        <Button primary>Reset</Button>
-      </Form>
+        </S.FormField>
+        <S.Button>Reset</S.Button>
+      </S.Container>
     )
   }
 }

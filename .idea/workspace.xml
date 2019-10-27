@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/forgot-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/forgot-password-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/forgot-password-page/forgot-password-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page/login-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/signup-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/reset-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/reset-password-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/reset-password-page.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="a5d33dab89598084e292de5bf2ef84c7c548750b" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JsFlowSettings">
@@ -64,11 +62,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\reset-password-form" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\forgot-password-form" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\forgot-password-page" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\singup-form" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\singup-page" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\login-page" />
     </key>
   </component>
   <component name="RunDashboard">

@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SignupForm from '../forms/signup-form';
-import { signup } from '../../actions/users';
+import { signup } from '../../../actions/users';
+
+import SignupForm from '../../forms/singup-form/signup-form';
+
+import { Container, Header } from "./style";
 
 class SignupPage extends Component {
 
   submit = data =>
     this.props.signup(data)
       .then(() => {
-        this.props.history.push('/dashboard');
+        this.props.history.push('/');
       });
 
   render() {
     return (
-      <div>
+      <Container>
+        <Header>Sing up</Header>
         <SignupForm submit={this.submit} />
-      </div>
+      </Container>
     )
   }
 }

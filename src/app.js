@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 import Loader from "react-loader";
 import HomePage from "./components/pages/home-page/home-page";
-import LoginPage from "./components/pages/login-page";
+import LoginPage from "./components/pages/login-page/login-page";
 import DashboardPage from "./components/pages/dashboard-page/dashboard-page";
-import SignUpPage from "./components/pages/signup-page";
+import SignUpPage from "./components/pages/singup-page/signup-page";
 import ConfirmationPage from "./components/pages/confirmation-page";
-import ForgotPasswordPage from "./components/pages/forgot-password-page";
+import ForgotPasswordPage from "./components/pages/forgot-password-page/forgot-password-page";
 import ResetPasswordPage from "./components/pages/reset-password-page";
 import UserRoute from "./components/routes/user-route";
 import GuestRoute from "./components/routes/guest-route";
@@ -26,12 +26,12 @@ class App extends Component {
   }
 
   render() {
-    const { location, isAuthenticated, loaded } = this.props;
+    const { location, loaded } = this.props;
 
     return (
       <div>
         <Loader loaded={loaded}>
-          {isAuthenticated && <TopNavigation />}
+          <TopNavigation />
           <Route location={location} path="/" exact component={HomePage} />
           <Route
             location={location}

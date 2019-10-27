@@ -3,18 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/items/user-book-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/user-book-item/user-book-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/user-books-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/user-books-list/user-books-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/forgot-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/forgot-password-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/forgot-password-page/forgot-password-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/login-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/login-page/login-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/signup-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,11 +64,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\dashboard-page" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\items\user-book-item" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\lists\user-books-page" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\lists" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\home-page" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\forgot-password-form" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\forgot-password-page" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\singup-form" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\singup-page" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\login-page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -211,7 +208,8 @@
       <workItem from="1571993087545" duration="16963000" />
       <workItem from="1572020609815" duration="5444000" />
       <workItem from="1572026792073" duration="24988000" />
-      <workItem from="1572079084475" duration="12794000" />
+      <workItem from="1572079084475" duration="21688000" />
+      <workItem from="1572105681851" duration="3307000" />
     </task>
     <servers />
   </component>

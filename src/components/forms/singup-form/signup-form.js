@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Message } from "semantic-ui-react";
 import Validator from "validator";
-import InlineError from "../messages/inline-error";
+
+import InlineError from "../../messages/inline-error";
+
+import * as S from "./style";
 
 class SingupForm extends Component {
   state = {
@@ -64,16 +66,9 @@ class SingupForm extends Component {
     const { data, loading, errors } = this.state;
 
     return (
-      <Form onSubmit={this.onSubmit} loading={loading}>
-        {errors.global && (
-          <Message negative>
-            <Message.Header>Something went wrong</Message.Header>
-            <p> {errors.global} </p>
-          </Message>
-        )}
-        <Form.Field error={!!errors.username}>
-          <label htmlFor="email">Username</label>
-          <input
+      <form onSubmit={this.onSubmit} loading={loading}>
+        <S.FormField error={!!errors.username}>
+          <S.FormInput
             type="text"
             id="username"
             name="username"
@@ -82,22 +77,20 @@ class SingupForm extends Component {
             onChange={this.onChange}
           />
           {errors.username && <InlineError text={errors.username} />}
-        </Form.Field>
-        <Form.Field error={!!errors.email}>
-          <label htmlFor="email">Email</label>
-          <input
+        </S.FormField>
+        <S.FormField error={!!errors.email}>
+          <S.FormInput
             type="email"
             id="email"
             name="email"
-            placeholder="example@example.com"
+            placeholder="Enter your email"
             value={data.email}
             onChange={this.onChange}
           />
           {errors.email && <InlineError text={errors.email} />}
-        </Form.Field>
-        <Form.Field error={!!errors.password}>
-          <label htmlFor="password">Password</label>
-          <input
+        </S.FormField>
+        <S.FormField error={!!errors.password}>
+          <S.FormInput
             type="password"
             id="password"
             name="password"
@@ -106,9 +99,9 @@ class SingupForm extends Component {
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={errors.password} />}
-        </Form.Field>
-        <Button primary>Sign up</Button>
-      </Form>
+        </S.FormField>
+        <S.SingUpButton>Sign up</S.SingUpButton>
+      </form>
     );
   }
 }

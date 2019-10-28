@@ -3,10 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/read-button/read-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/read-button/read-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/items/user-book-item/user-book-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/user-book-item/user-book-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/user-books-list/user-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/user-books-list/user-books-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/schemas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +60,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -211,6 +225,11 @@
       <workItem from="1572026792073" duration="24988000" />
       <workItem from="1572079084475" duration="21688000" />
       <workItem from="1572105681851" duration="3307000" />
+      <workItem from="1572178835349" duration="1707000" />
+      <workItem from="1572180923927" duration="9866000" />
+      <workItem from="1572203406279" duration="25394000" />
+      <workItem from="1572235151549" duration="1196000" />
+      <workItem from="1572248107450" duration="665000" />
     </task>
     <servers />
   </component>

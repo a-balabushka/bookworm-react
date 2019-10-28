@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Rating from "react-rating";
-import { fetchBookData, checkRead, checkLike } from "../../../actions/books";
+import { fetchBookData } from "../../../actions/books";
 
 import CenterLoading from "../../loaders/center-loader/center-loader";
 import LikeButton from "../../buttons/like-button/like-button";
@@ -27,16 +27,8 @@ import {
 
 import starBorder from "../../../img/star_border.png";
 import star from "../../../img/star.png";
-import { allBooksSelector } from "../../../reducers/books";
 
 class BookPage extends Component {
-  state = {
-    book: null,
-    readStatus: false,
-    likeStatus: false,
-    loadingBook: true,
-    errors: {}
-  };
 
   componentDidMount() {
     this.fetchBook();
@@ -46,82 +38,34 @@ class BookPage extends Component {
     const { id } = this.props.match.params;
     const prevId = prevProps.match.params.id;
     if (id !== prevId) {
-      this.setState({ loadingBook: true });
       this.fetchBook();
     }
   }
 
   fetchBook = () => {
     const { id } = this.props.match.params;
-    this.props.fetchBookData(id).then(data => {
-      const { goodreadsId } = data;
-      this.checkReadStatus(goodreadsId);
-      this.checkLikeStatus(goodreadsId);
-      this.setState({
-        book: { ...data },
-        loadingBook: false
-      });
-    });
-  };
-
-  checkReadStatus = goodreadsId => {
-    this.props.checkRead(goodreadsId).then(result =>
-      this.setState({
-        readStatus: result.read,
-        book: { ...this.state.book, readPages: result.readPages }
-      })
-    );
-  };
-
-  checkLikeStatus = goodreadsId => {
-    this.props
-      .checkLike(goodreadsId)
-      .then(result => this.setState({ likeStatus: result }));
-  };
-
-  updateErrors = value => this.setState({ errors: value });
-
-  updateReadPages = readPages => {
-    this.setState({
-      book: { ...this.state.book, readPages }
-    });
+    this.props.fetchBookData(id)
   };
 
   createDescription = () => {
-    return { __html: this.state.book.description };
+    return { __html: this.props.book.description };
   };
 
   render() {
-    const { book, readStatus, likeStatus } = this.state;
-    return this.state.loadingBook ? (
-      <CenterLoading />
-    ) : (
+    const { book, loading, confirmed } = this.props;
+    return loading ? (
       <StyledSection>
         <StyledLeft>
           <StyledCover src={book.image_url} alt={`${book.title} cover`} />
-          <div>
-            {readStatus ? (
-              <DeleteButton
-                id={book.goodreadsId}
-                updateErrors={this.updateErrors}
-                updateReadStatus={value => this.setState({ readStatus: value })}
-              />
-            ) : (
-              <ReadButton
-                book={book}
-                updateErrors={this.updateErrors}
-                updateReadStatus={value => this.setState({ readStatus: value })}
-              />
-            )}
-          </div>
-          <div>
-            <LikeButton
-              id={book.goodreadsId}
-              likeStatus={likeStatus}
-              updateErrors={this.updateErrors}
-              updateLike={value => this.setState({ likeStatus: value })}
-            />
-          </div>
+          { confirmed && <div>
+            {book.readStatus
+              ? <DeleteButton id={book.goodreadsId} inList={true} />
+              : <ReadButton book={book} /> }
+          </div> }
+
+          { confirmed && <div>
+            <LikeButton id={book.goodreadsId} likeStatus={book.likeStatus} inList={false}/>
+          </div> }
         </StyledLeft>
         <StyledCenter>
           <StyledTitle>{book.title}</StyledTitle>
@@ -150,15 +94,16 @@ class BookPage extends Component {
         </StyledCenter>
         <StyledRight>
           <StyledProgressHeader>Your progress</StyledProgressHeader>
-          <ReadProgressWidget
+          { confirmed && <ReadProgressWidget
             pages={book.pages}
             readPages={book.readPages}
             goodreadsId={book.goodreadsId}
-            updateErrors={this.updateErrors}
-            updateReadPages={this.updateReadPages}
-          />
+            inList={false}
+          /> }
         </StyledRight>
       </StyledSection>
+    ) : (
+      <CenterLoading />
     );
   }
 }
@@ -169,18 +114,19 @@ BookPage.propTypes = {
       id: PropTypes.string.isRequired
     }).isRequired
   }).isRequired,
-  fetchBookData: PropTypes.func.isRequired,
-  checkRead: PropTypes.func.isRequired,
-  checkLike: PropTypes.func.isRequired
+  fetchBookData: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    isAuthenticated: !!state.user.email
+    book: state.books.data,
+    loading: state.books.loading,
+    isAuthenticated: !!state.user.email,
+    confirmed: state.user.confirmed
   };
 }
 
 export default connect(
   mapStateToProps,
-  { fetchBookData, checkRead, checkLike }
+  { fetchBookData }
 )(BookPage);

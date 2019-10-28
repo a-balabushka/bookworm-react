@@ -1,10 +1,26 @@
-import { normalize } from "normalizr";
-import { BOOKS_FETCHED, BOOK_CREATED, BOOK_REMOVAL, TOP_FETHCED, ADD_LIKE, CHANGE_PROGRESS } from "../types";
 import api from "../api";
-import { bookSchema } from "../schemas";
+import {
+  BOOKS_FETCHED,
+  BOOK_CREATED,
+  BOOK_DELETE,
+  TOP_FETHCED,
+  ADD_LIKE,
+  UPDATE_PROGRESS,
+  BOOK_DATA_FETCH,
+  BOOK_DELETE_IN_LIST,
+  DELETE_LIKE,
+  ADD_LIKE_IN_LIST,
+  DELETE_LIKE_IN_LIST,
+  UPDATE_PROGRESS_IN_LIST
+} from "../types";
 
 const booksFetched = data => ({
   type: BOOKS_FETCHED,
+  data
+});
+
+const bookDataFetch = data => ({
+  type: BOOK_DATA_FETCH,
   data
 });
 
@@ -14,8 +30,13 @@ const bookCreated = data => ({
 });
 
 const bookRemoval = data => ({
-  type: BOOK_REMOVAL,
-  id: data.id
+  type: BOOK_DELETE,
+  data
+});
+
+const bookDeleteInList = id => ({
+  type: BOOK_DELETE_IN_LIST,
+  id
 });
 
 const topFetched = data => ({
@@ -23,55 +44,98 @@ const topFetched = data => ({
   data
 });
 
-const addBookLike = id => ({
+const addBookLike = data => ({
   type: ADD_LIKE,
-  id
-});
-
-const changeProgress = data => ({
-  type: CHANGE_PROGRESS,
   data
 });
 
-export const search = (title) => () => api.books.search(title);
+const deleteBookLike = data => ({
+  type: DELETE_LIKE,
+  data
+});
 
-export const searchByPage = (title, pageNum) => () => api.books.searchByPage(title, pageNum);
+const addBookLikeInList = data => ({
+  type: ADD_LIKE_IN_LIST,
+  data
+});
 
-export const fetchBookData = id => () => api.books.fetchBookData(id);
+const deleteBookLikeInList = data => ({
+  type: DELETE_LIKE_IN_LIST,
+  data
+});
+
+const changeProgress = data => ({
+  type: UPDATE_PROGRESS,
+  data
+});
+
+const updateProgressInList = data => ({
+  type: UPDATE_PROGRESS_IN_LIST,
+  data
+});
+
+export const search = title => () => api.books.search(title);
+
+export const searchByPage = (title, pageNum) => () =>
+  api.books.searchByPage(title, pageNum);
+
+export const fetchBookData = id => dispatch =>
+  api.books.fetchBookData(id).then(book => {
+    dispatch(bookDataFetch(book));
+  });
 
 export const fetchBooks = () => dispatch =>
   api.books.fetchAll().then(books => {
-    dispatch(booksFetched(normalize(books, [bookSchema])));
+    dispatch(booksFetched(books));
   });
 
 export const createBook = data => dispatch =>
   api.books.create(data).then(book => {
-    dispatch(bookCreated(normalize(book, bookSchema)));
+    dispatch(bookCreated(book));
   });
 
 export const deleteBook = id => dispatch =>
-  api.books.delete(id).then(bookId => {
-    dispatch(bookRemoval(bookId));
+  api.books.delete(id).then(book => {
+    dispatch(bookRemoval(book));
   });
 
-export const checkLike = id => () => api.books.checkLike(id);
-
-export const deleteLike = id => () => api.books.deleteLike(id);
+export const deleteBookInList = id => dispatch =>
+  api.books.deleteBookInList(id).then(bookId => {
+    dispatch(bookDeleteInList(bookId));
+  });
 
 export const addLike = id => dispatch =>
-  api.books.addLike(id).then(bookId => {
-    dispatch(addBookLike(bookId));
+  api.books.addLike(id).then(book => {
+    dispatch(addBookLike(book));
+  });
+
+export const deleteLike = id => dispatch =>
+  api.books.deleteLike(id).then(book => {
+    dispatch(deleteBookLike(book));
+  });
+
+export const addLikeInList = id => dispatch =>
+  api.books.addLike(id).then(book => {
+    dispatch(addBookLikeInList(book));
+  });
+
+export const deleteLikeInList = id => dispatch =>
+  api.books.deleteLike(id).then(book => {
+    dispatch(deleteBookLikeInList(book));
   });
 
 export const getTop = () => dispatch => {
   api.books.getTop().then(books => {
     dispatch(topFetched(books));
-  })
+  });
 };
 
-export const checkRead = id => () => api.books.checkRead(id);
+export const updateBookProgress = (num, id) => dispatch =>
+  api.books.updateProgress(num, id).then(progress => {
+    dispatch(changeProgress(progress));
+  });
 
-export const saveProgress = (num, id) => dispatch =>
-  api.books.saveProgress(num, id).then(data => {
-    dispatch(changeProgress(data));
+export const updateBookProgressInList = (num, id) => dispatch =>
+  api.books.updateProgress(num, id).then(progress => {
+    dispatch(updateProgressInList(progress));
   });

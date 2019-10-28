@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { deleteBook } from "../../../actions/books";
+import { deleteBook, deleteBookInList } from "../../../actions/books";
 
 import { StyledButton } from "./style";
 
-const DeleteButton = ({ id, deleteBook, updateReadStatus, updateErrors }) => {
+const DeleteButton = ({ id, deleteBook, deleteBookInList, inList }) => {
   const onSubmit = e => {
     e.preventDefault();
-    deleteBook(id)
-      .then(result => updateReadStatus(result.readStatus))
-      .catch(err => updateErrors(err.response.data.errors));
+    inList ? deleteBook(id) : deleteBookInList(id);
   };
 
   return <StyledButton onClick={onSubmit}>Delete</StyledButton>
@@ -19,11 +17,10 @@ const DeleteButton = ({ id, deleteBook, updateReadStatus, updateErrors }) => {
 DeleteButton.propTypes = {
   id: PropTypes.string.isRequired,
   deleteBook: PropTypes.func.isRequired,
-  updateReadStatus: PropTypes.func.isRequired,
-  updateErrors: PropTypes.func.isRequired
+  inList: PropTypes.bool.isRequired
 };
 
 export default connect(
   null,
-  { deleteBook }
+  { deleteBook, deleteBookInList }
 )(DeleteButton);

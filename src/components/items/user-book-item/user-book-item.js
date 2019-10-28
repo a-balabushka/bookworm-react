@@ -13,12 +13,6 @@ import star from "../../../img/star.png";
 
 class UserBookItem extends Component {
 
-  onSubmit = e => {
-    e.preventDefault();
-    this.props.submit(this.props.book.goodreadsId)
-      .catch((e) => console.log(e))
-  };
-
   render() {
     const { book } = this.props;
     return (
@@ -40,12 +34,13 @@ class UserBookItem extends Component {
           </StyledRating>
           <StyledButtonsDiv>
             <StyledButtonItem>
-              <DeleteButton />
+              <DeleteButton id={book.goodreadsId} inList={false} />
             </StyledButtonItem>
             <StyledButtonItem>
               <LikeButton
                 id={book.goodreadsId}
                 likeStatus={book.likeStatus}
+                inList={true}
               />
             </StyledButtonItem>
           </StyledButtonsDiv>
@@ -56,6 +51,7 @@ class UserBookItem extends Component {
             pages={book.pages}
             readPages={book.readPages}
             goodreadsId={book.goodreadsId}
+            inList={true}
           />
         </StyledRight>
       </StyledArticle>
@@ -64,7 +60,6 @@ class UserBookItem extends Component {
 }
 
 UserBookItem.propTypes = {
-  submit: PropTypes.func.isRequired,
   book: PropTypes.shape({
     authors: PropTypes.string.isRequired,
     average_rating: PropTypes.number.isRequired,

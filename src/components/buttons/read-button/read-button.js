@@ -5,22 +5,28 @@ import { createBook } from "../../../actions/books";
 
 import { StyledButton } from './style';
 
-const ReadButton = ({ book, createBook, updateReadStatus, updateErrors }) => {
+const ReadButton = ({ book, createBook }) => {
   const onSubmit = e => {
     e.preventDefault();
     createBook(book)
-      .then(updateReadStatus(true))
-      .catch(err => updateErrors(err.response.data.errors));
   };
 
   return <StyledButton onClick={onSubmit}>Read</StyledButton>;
 };
 
 ReadButton.propTypes = {
-  book: PropTypes.shape().isRequired,
+  book: PropTypes.shape({
+    authors: PropTypes.string.isRequired,
+    average_rating: PropTypes.string.isRequired,
+    goodreadsId: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+    likeStatus: PropTypes.bool.isRequired,
+    pages: PropTypes.string.isRequired,
+    readPages: PropTypes.number,
+    title: PropTypes.string.isRequired,
+    _id: PropTypes.string
+  }).isRequired,
   createBook: PropTypes.func.isRequired,
-  updateReadStatus: PropTypes.func.isRequired,
-  updateErrors: PropTypes.func.isRequired
 };
 
 export default connect(

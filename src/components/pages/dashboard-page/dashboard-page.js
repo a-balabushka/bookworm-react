@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import ConfirmEmailMessage from "../../messages/confirm-email-message";
 import { allBooksSelector } from "../../../reducers/books";
 import { fetchBooks } from "../../../actions/books";
 
+import ConfirmEmailMessage from "../../messages/confirm-email-message";
 import UserBooksList from "../../lists/user-books-list/user-books-list";
 import CenterLoading from "../../loaders/center-loader/center-loader";
 

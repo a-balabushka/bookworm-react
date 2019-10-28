@@ -26,18 +26,16 @@ export default {
     create: book => axios.post('/api/books', { book })
       .then(res => res.data.book),
     delete: id => axios.post('/api/books/delete_book', { id })
-      .then(res => res.data),
-    checkLike: id => axios.get('/api/books/check_like', { params: { id } })
-      .then(res => res.data.result),
+      .then(res => res.data.book),
+    deleteBookInList: id => axios.post('/api/books/delete_book', { id })
+      .then(res => res.data.book.goodreadsId),
     addLike: id => axios.post('/api/books/add_like', { id })
-      .then(res => res.data.id),
+      .then(res => res.data.book),
     deleteLike: id => axios.post('/api/books/delete_like', { id })
-      .then(res => res.data.like),
+      .then(res => res.data.book),
     getTop: () => axios.get('/api/books/get_top')
       .then(res => res.data.books),
-    checkRead: id => axios.get('/api/books/check_read_book', { params: { id } })
-      .then(res => res.data.result),
-    saveProgress: (num, id) => axios.post('/api/books/save_progress', { num, id })
-      .then(res => res.data)
+    updateProgress: (num, id) => axios.post('/api/books/save_progress', { num, id })
+      .then(res => res.data.progress)
   }
 }

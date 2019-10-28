@@ -36,7 +36,7 @@ TopNavigation.propTypes = {
   logout: PropTypes.func.isRequired
 };
 
-function MapStateToProps(state) {
+function mapStateToProps(state) {
   return {
     user: state.user,
     isAuthenticated: !!state.user.email
@@ -44,6 +44,6 @@ function MapStateToProps(state) {
 }
 
 export default connect(
-  MapStateToProps,
+  mapStateToProps,
   { logout }
 )(TopNavigation);

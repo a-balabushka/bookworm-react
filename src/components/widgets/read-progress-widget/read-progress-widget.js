@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { saveProgress } from "../../../actions/books";
+import {
+  updateBookProgress,
+  updateBookProgressInList
+} from "../../../actions/books";
 
-import { StyledStat, StyledButton, StyledProgress, StyledInput, StyledDiv } from "./style";
+import {
+  StyledStat,
+  StyledButton,
+  StyledProgress,
+  StyledInput,
+  StyledDiv
+} from "./style";
 
 class ReadProgressWidget extends Component {
   state = {
@@ -14,15 +23,29 @@ class ReadProgressWidget extends Component {
 
   saveProgressClick = e => {
     e.preventDefault();
-    const { goodreadsId, saveProgress } = this.props;
+    const {
+      goodreadsId,
+      updateBookProgress,
+      inList,
+      updateBookProgressInList
+    } = this.props;
     const readPages = parseInt(this.state.readPages);
-    saveProgress(readPages, goodreadsId)
-      .then(() => this.setState({ visibilityProgress: false }));
+
+    if (inList) {
+      updateBookProgressInList(readPages, goodreadsId).then(() =>
+        this.setState({ visibilityProgress: false })
+      );
+    } else {
+      updateBookProgress(readPages, goodreadsId).then(() =>
+        this.setState({ visibilityProgress: false })
+      );
+    }
   };
 
   render() {
     const { pages, readPages } = this.props;
     const { visibilityProgress } = this.state;
+    const value = readPages || 0;
     return visibilityProgress ? (
       <div>
         <StyledDiv>
@@ -31,7 +54,7 @@ class ReadProgressWidget extends Component {
             type="text"
             name="readPages"
             id="readPages"
-            defaultValue={readPages ? readPages : 0}
+            defaultValue={value}
             onChange={this.onChange}
           />
           <span>of {pages}</span>
@@ -41,9 +64,15 @@ class ReadProgressWidget extends Component {
       </div>
     ) : (
       <div>
-        <StyledProgress value={readPages ? readPages : 0} max={pages} />
-        <StyledStat>{readPages ? readPages : 0}/{pages}</StyledStat>
-        <StyledButton onClick={() => this.setState({ visibilityProgress: true })}>Update progress</StyledButton>
+        <StyledProgress value={value} max={pages} />
+        <StyledStat>
+          {value}/{pages}
+        </StyledStat>
+        <StyledButton
+          onClick={() => this.setState({ visibilityProgress: true })}
+        >
+          Update progress
+        </StyledButton>
       </div>
     );
   }
@@ -53,12 +82,12 @@ ReadProgressWidget.propTypes = {
   pages: PropTypes.number.isRequired,
   readPages: PropTypes.number.isRequired,
   goodreadsId: PropTypes.string.isRequired,
-  updateErrors: PropTypes.func.isRequired,
-  updateReadPages: PropTypes.func.isRequired,
-  saveProgress: PropTypes.func.isRequired
+  updateBookProgressInList: PropTypes.func.isRequired,
+  updateBookProgress: PropTypes.func.isRequired,
+  inList: PropTypes.bool.isRequired
 };
 
 export default connect(
   null,
-  { saveProgress }
+  { updateBookProgress, updateBookProgressInList }
 )(ReadProgressWidget);

@@ -63,13 +63,12 @@ class App extends Component {
             exact
             component={ResetPasswordPage}
           />
-          <UserRoute
+          <GuestRoute
             location={location}
-            path="/dashboard"
-            exact
-            component={DashboardPage}
+            path="/search"
+            component={SearchAllResultPage}
           />
-          <UserRoute
+          <GuestRoute
             location={location}
             path="/books/new/:id"
             exact
@@ -77,8 +76,9 @@ class App extends Component {
           />
           <UserRoute
             location={location}
-            path="/search"
-            component={SearchAllResultPage}
+            path="/dashboard"
+            exact
+            component={DashboardPage}
           />
         </Loader>
       </div>

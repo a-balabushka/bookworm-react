@@ -12,10 +12,8 @@ import { StyledContainer } from './style';
 
 class HomePage extends Component {
   componentDidMount() {
-    this.onInit(this.props);
+    this.props.getTop();
   }
-
-  onInit = (props) => props.getTop();
 
   render() {
     const { books, loading } = this.props;

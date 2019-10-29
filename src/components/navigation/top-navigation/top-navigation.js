@@ -10,14 +10,23 @@ import Search from "../../search/search/search";
 import vectorGR from "../../../img/vector.png";
 import permIndentity from "../../../img/perm_identity.png";
 
-const TopNavigation = ({ user, logout, isAuthenticated }) => (
+const TopNavigation = ({ logout, isAuthenticated }) => (
   <StyledHeader>
     <Link to="/">
       <StyledIcon src={vectorGR} alt="Go to main page" />
     </Link>
     <Search />
     {isAuthenticated ? (
-      <StyledIcon src={permIndentity} alt="" />
+      <div>
+        <StyledIcon src={permIndentity} alt="" />
+        <button onClick={() => logout()}>Logout</button>
+        <Link
+          style={{ textDecoration: "none", color: "#FFFFFF", fontSize: "1.1em" }}
+          to="/dashboard"
+        >
+          My Books
+        </Link>
+      </div>
     ) : (
       <Link
         style={{ textDecoration: "none", color: "#FFFFFF", fontSize: "1.1em" }}
@@ -30,9 +39,6 @@ const TopNavigation = ({ user, logout, isAuthenticated }) => (
 );
 
 TopNavigation.propTypes = {
-  user: PropTypes.shape({
-    email: PropTypes.string.isRequired
-  }).isRequired,
   logout: PropTypes.func.isRequired
 };
 

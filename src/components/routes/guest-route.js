@@ -7,9 +7,9 @@ const GuestRoute = ({ isAuthenticated, component: Component, ...rest }) => (
   <Route
     { ...rest }
     render={props => !isAuthenticated ? (
-      <Component { ...props }/>
+      <Component { ...props } />
       ) : (
-        <Redirect to="/dashboard" />
+        <Redirect to="/" />
         )}
   />
 );

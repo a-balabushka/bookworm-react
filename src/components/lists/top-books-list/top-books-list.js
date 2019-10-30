@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 
 import TopBooksItem from "../../items/top-books-item/top-books-item";
 

@@ -8,7 +8,7 @@ import { allBooksSelector } from "../../../reducers/books";
 import TopBooksList from "../../lists/top-books-list/top-books-list";
 import CenterLoading from "../../loaders/center-loader/center-loader";
 
-import { StyledContainer } from './style';
+import { StyledContainer } from "./style";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -19,13 +19,13 @@ class HomePage extends Component {
     const { books, loading } = this.props;
 
     return loading ? (
-          <StyledContainer>
-            <TopBooksList topLikes={true} books={books[0]} />
-            <TopBooksList topLikes={false} books={books[1]} />
-          </StyledContainer>
-        ) : (
-          <CenterLoading />
-          );
+      <StyledContainer>
+        <TopBooksList topLikes={true} books={books[0]} />
+        <TopBooksList topLikes={false} books={books[1]} />
+      </StyledContainer>
+    ) : (
+      <CenterLoading />
+    );
   }
 }
 

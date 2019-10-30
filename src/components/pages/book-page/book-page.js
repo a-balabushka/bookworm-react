@@ -92,15 +92,15 @@ class BookPage extends Component {
             </div>
           </StyledPublish>
         </StyledCenter>
-        <StyledRight>
+        { confirmed && book.readStatus && <StyledRight>
           <StyledProgressHeader>Your progress</StyledProgressHeader>
-          { confirmed && <ReadProgressWidget
+          <ReadProgressWidget
             pages={book.pages}
             readPages={book.readPages}
             goodreadsId={book.goodreadsId}
             inList={false}
-          /> }
-        </StyledRight>
+          />
+        </StyledRight> }
       </StyledSection>
     ) : (
       <CenterLoading />

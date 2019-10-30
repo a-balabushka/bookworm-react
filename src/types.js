@@ -13,3 +13,4 @@ export const DELETE_LIKE = 'DELETE_LIKE';
 export const BOOK_DELETE = 'BOOK_DELETE';
 export const BOOK_CREATED = 'BOOK_CREATED';
 export const UPDATE_PROGRESS = 'UPDATE_PROGRESS';
+export const LOADING_DATA = 'LOADING_DATA';

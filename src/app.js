@@ -39,41 +39,41 @@ class App extends Component {
             exact
             component={ConfirmationPage}
           />
-          <GuestRoute
-            location={location}
-            path="/login"
-            exact
-            component={LoginPage}
-          />
-          <GuestRoute
-            location={location}
-            path="/signup"
-            exact
-            component={SignUpPage}
-          />
-          <GuestRoute
-            location={location}
-            path="/forgot_password"
-            exact
-            component={ForgotPasswordPage}
-          />
-          <GuestRoute
-            location={location}
-            path="/reset_password/:token"
-            exact
-            component={ResetPasswordPage}
-          />
-          <GuestRoute
+          <Route
             location={location}
             path="/search"
             component={SearchAllResultPage}
           />
-          <GuestRoute
+          <Route
             location={location}
             path="/books/new/:id"
             exact
             component={BookPage}
           />
+          <GuestRoute
+            location={location}
+            path="/login"
+            exact
+            component={LoginPage}
+            />
+          <GuestRoute
+            location={location}
+            path="/signup"
+            exact
+            component={SignUpPage}
+            />
+          <GuestRoute
+            location={location}
+            path="/forgot_password"
+            exact
+            component={ForgotPasswordPage}
+            />
+          <GuestRoute
+            location={location}
+            path="/reset_password/:token"
+            exact
+            component={ResetPasswordPage}
+            />
           <UserRoute
             location={location}
             path="/dashboard"

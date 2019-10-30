@@ -21,15 +21,7 @@ class DashboardPage extends Component {
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
         {books.length === 0 ? <h3>No books(</h3> : (
-          <>
-            <h2>My books</h2>
-            <ul>
-              <li>All</li>
-              <li>Read</li>
-              <li>Like</li>
-            </ul>
-            <UserBooksList books={books} />
-          </>
+          <UserBooksList books={books} />
         )}
       </div>
     ) : (

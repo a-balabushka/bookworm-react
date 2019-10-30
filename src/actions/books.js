@@ -11,7 +11,8 @@ import {
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST
+  UPDATE_PROGRESS_IN_LIST,
+  LOADING_DATA
 } from "../types";
 
 const booksFetched = data => ({
@@ -74,20 +75,29 @@ const updateProgressInList = data => ({
   data
 });
 
+const loadingData = loading => ({
+  type: LOADING_DATA,
+  loading
+});
+
 export const search = title => () => api.books.search(title);
 
 export const searchByPage = (title, pageNum) => () =>
   api.books.searchByPage(title, pageNum);
 
-export const fetchBookData = id => dispatch =>
+export const fetchBookData = id => dispatch => {
+  dispatch(loadingData(false));
   api.books.fetchBookData(id).then(book => {
     dispatch(bookDataFetch(book));
   });
+};
 
-export const fetchBooks = () => dispatch =>
+export const fetchBooks = () => dispatch => {
+  dispatch(loadingData(false));
   api.books.fetchAll().then(books => {
     dispatch(booksFetched(books));
   });
+};
 
 export const createBook = data => dispatch =>
   api.books.create(data).then(book => {
@@ -125,6 +135,7 @@ export const deleteLikeInList = id => dispatch =>
   });
 
 export const getTop = () => dispatch => {
+  dispatch(loadingData(false));
   api.books.getTop().then(books => {
     dispatch(topFetched(books));
   });

@@ -11,7 +11,8 @@ import {
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST
+  UPDATE_PROGRESS_IN_LIST,
+  LOADING_DATA
 } from "../types";
 
 const initialState = {
@@ -33,7 +34,12 @@ export default function books(state = initialState, action = {}) {
     case BOOK_CREATED:
       return { ...state, data: { ...action.data } };
     case TOP_FETHCED:
-      return { ...state, data: action.data, loading: true, error: null };
+      return {
+        ...state,
+        data: action.data,
+        loading: true,
+        error: null
+      };
 
     case ADD_LIKE:
     case DELETE_LIKE:
@@ -83,6 +89,8 @@ export default function books(state = initialState, action = {}) {
         error: null
       };
 
+    case LOADING_DATA:
+      return { ...state, loading: action.loading };
     default:
       return state;
   }

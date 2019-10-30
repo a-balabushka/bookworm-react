@@ -1,16 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { Route, Redirect } from "react-router-dom";
 
 const GuestRoute = ({ isAuthenticated, component: Component, ...rest }) => (
   <Route
-    { ...rest }
-    render={props => !isAuthenticated ? (
-      <Component { ...props } />
-      ) : (
-        <Redirect to="/" />
-        )}
+    {...rest}
+    render={props =>
+      !isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
+    }
   />
 );
 
@@ -21,8 +19,8 @@ GuestRoute.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    isAuthenticated: !!state.user.token
-  }
+    isAuthenticated: !!state.user.email
+  };
 }
 
 export default connect(mapStateToProps)(GuestRoute);

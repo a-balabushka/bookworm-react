@@ -12,7 +12,6 @@ class ResetPasswordForm extends Component {
       password: '',
       passwordConfirmation: ''
     },
-    loading: false,
     errors: {}
   };
 
@@ -25,15 +24,11 @@ class ResetPasswordForm extends Component {
     });
 
     if (Object.keys(errors).length === 0) {
-      this.setState({
-        loading: true
-      });
       this.props
         .submit(data)
         .catch(err => {
           this.setState({
-            errors: err.response.data.errors,
-            loading: false
+            errors: err.response.data.errors
           });
         });
     }
@@ -64,7 +59,7 @@ class ResetPasswordForm extends Component {
   };
 
   render() {
-    const { data, loading, errors } = this.state;
+    const { data, errors } = this.state;
 
     return (
       <S.Container onSubmit={this.onSubmit}>

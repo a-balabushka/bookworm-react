@@ -1,32 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { logout } from "../../../actions/auth";
 
-import { StyledHeader, StyledIcon } from "./style";
 import Search from "../../search/search/search";
+import UserButton from "../../buttons/user-button/user-button";
 
 import vectorGR from "../../../img/vector.png";
-import permIndentity from "../../../img/perm_identity.png";
 
-const TopNavigation = ({ logout, isAuthenticated }) => (
+import { StyledHeader, StyledIcon } from "./style";
+
+const TopNavigation = ({ isAuthenticated }) => (
   <StyledHeader>
     <Link to="/">
       <StyledIcon src={vectorGR} alt="Go to main page" />
     </Link>
     <Search />
     {isAuthenticated ? (
-      <div>
-        <StyledIcon src={permIndentity} alt="" />
-        <button onClick={() => logout()}>Logout</button>
-        <Link
-          style={{ textDecoration: "none", color: "#FFFFFF", fontSize: "1.1em" }}
-          to="/dashboard"
-        >
-          My Books
-        </Link>
-      </div>
+      <UserButton />
     ) : (
       <Link
         style={{ textDecoration: "none", color: "#FFFFFF", fontSize: "1.1em" }}
@@ -38,10 +28,6 @@ const TopNavigation = ({ logout, isAuthenticated }) => (
   </StyledHeader>
 );
 
-TopNavigation.propTypes = {
-  logout: PropTypes.func.isRequired
-};
-
 function mapStateToProps(state) {
   return {
     user: state.user,
@@ -49,7 +35,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { logout }
-)(TopNavigation);
+export default connect(mapStateToProps)(TopNavigation);

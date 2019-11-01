@@ -1,9 +1,11 @@
 import { createSelector } from "reselect";
 import {
+  FETCH_TOP_REQUEST,
+  FETCH_TOP_SUCCESS,
+  FETCH_TOP_FAILURE,
   BOOKS_FETCHED,
   BOOK_CREATED,
   BOOK_DELETE,
-  TOP_FETHCED,
   ADD_LIKE,
   UPDATE_PROGRESS,
   BOOK_DATA_FETCH,
@@ -23,6 +25,8 @@ const initialState = {
 
 export default function books(state = initialState, action = {}) {
   switch (action.type) {
+    case BOOK_CREATED:
+      return { ...state, data: { ...action.data } };
     case BOOKS_FETCHED:
     case BOOK_DATA_FETCH:
       return {
@@ -31,14 +35,21 @@ export default function books(state = initialState, action = {}) {
         loading: true,
         error: null
       };
-    case BOOK_CREATED:
-      return { ...state, data: { ...action.data } };
-    case TOP_FETHCED:
+
+    case FETCH_TOP_REQUEST:
       return {
         ...state,
         data: action.data,
         loading: true,
         error: null
+      };
+    case FETCH_TOP_SUCCESS:
+      return { ...state, loading: false, error: null };
+    case FETCH_TOP_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.response.data.error
       };
 
     case ADD_LIKE:
@@ -99,6 +110,7 @@ export default function books(state = initialState, action = {}) {
 // SELECTORS
 
 export const booksSelector = state => state.books.data;
+
 
 export const allBooksSelector = createSelector(
   booksSelector,

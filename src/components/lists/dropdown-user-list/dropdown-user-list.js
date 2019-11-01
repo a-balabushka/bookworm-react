@@ -5,7 +5,7 @@ import { logout } from "../../../actions/auth";
 
 import * as S from "./style";
 
-const DropdownUserList = ({ visibility }) => {
+const DropdownUserList = ({ visibility, logout }) => {
   return visibility ? (
     <S.Container>
       <S.Item>

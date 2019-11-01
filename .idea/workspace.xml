@@ -3,18 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/top-navigation/top-navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/dropdown-user-list/dropdown-user-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/dropdown-user-list/dropdown-user-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routes/guest-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/guest-route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routes/user-route.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/user-route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
@@ -233,7 +225,10 @@
       <workItem from="1572351157383" duration="6792000" />
       <workItem from="1572369919028" duration="8979000" />
       <workItem from="1572419489041" duration="5811000" />
-      <workItem from="1572443486265" duration="6983000" />
+      <workItem from="1572443486265" duration="7148000" />
+      <workItem from="1572524799864" duration="5235000" />
+      <workItem from="1572612250499" duration="5736000" />
+      <workItem from="1572629912228" duration="5857000" />
     </task>
     <servers />
   </component>

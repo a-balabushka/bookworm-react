@@ -1,31 +1,39 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as actions from "../../../actions/auth";
-import { getTop } from "../../../actions/books";
+import { getTop, getTopSuccess, getTopFailure } from "../../../actions/books";
 import { allBooksSelector } from "../../../reducers/books";
 
 import TopBooksList from "../../lists/top-books-list/top-books-list";
 import CenterLoading from "../../loaders/center-loader/center-loader";
+import PageError from "../../errors/page-error/page-error";
 
 import { StyledContainer } from "./style";
 
 class HomePage extends Component {
   componentDidMount() {
-    this.props.getTop();
+    const { getTop, getTopSuccess, getTopFailure } = this.props;
+    getTop()
+      .then(() => getTopSuccess())
+      .catch(error => getTopFailure(error));
   }
 
   render() {
-    const { books, loading } = this.props;
+    const { books, loading, error } = this.props;
+    let content;
 
-    return loading ? (
-      <StyledContainer>
-        <TopBooksList topLikes={true} books={books[0]} />
-        <TopBooksList topLikes={false} books={books[1]} />
-      </StyledContainer>
-    ) : (
-      <CenterLoading />
-    );
+    if (error) {
+      content = <PageError title={error} />;
+    } else {
+      content = (
+        <StyledContainer>
+          <TopBooksList topLikes={true} books={books[0]} />
+          <TopBooksList topLikes={false} books={books[1]} />
+        </StyledContainer>
+      );
+    }
+
+    return loading ? <CenterLoading /> : content;
   }
 }
 
@@ -50,11 +58,12 @@ HomePage.propTypes = {
 function mapStateToProps(state) {
   return {
     books: allBooksSelector(state),
-    loading: state.books.loading
+    loading: state.books.loading,
+    error: state.books.error
   };
 }
 
 export default connect(
   mapStateToProps,
-  { getTop, logout: actions.logout }
+  { getTop, getTopSuccess, getTopFailure }
 )(HomePage);

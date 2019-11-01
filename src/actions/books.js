@@ -3,7 +3,9 @@ import {
   BOOKS_FETCHED,
   BOOK_CREATED,
   BOOK_DELETE,
-  TOP_FETHCED,
+  FETCH_TOP_REQUEST,
+  FETCH_TOP_SUCCESS,
+  FETCH_TOP_FAILURE,
   ADD_LIKE,
   UPDATE_PROGRESS,
   BOOK_DATA_FETCH,
@@ -14,6 +16,20 @@ import {
   UPDATE_PROGRESS_IN_LIST,
   LOADING_DATA
 } from "../types";
+
+const topFetched = data => ({
+  type: FETCH_TOP_REQUEST,
+  data
+});
+
+const fetchTopSuccess = () => ({
+  type: FETCH_TOP_SUCCESS
+});
+
+const fetchTopFailure = error => ({
+  type: FETCH_TOP_FAILURE,
+  error
+});
 
 const booksFetched = data => ({
   type: BOOKS_FETCHED,
@@ -38,11 +54,6 @@ const bookRemoval = data => ({
 const bookDeleteInList = id => ({
   type: BOOK_DELETE_IN_LIST,
   id
-});
-
-const topFetched = data => ({
-  type: TOP_FETHCED,
-  data
 });
 
 const addBookLike = data => ({
@@ -79,6 +90,17 @@ const loadingData = loading => ({
   type: LOADING_DATA,
   loading
 });
+
+/* ============================================= */
+
+export const getTop = () => dispatch =>
+  api.books.getTop().then(books => dispatch(topFetched(books)));
+
+export const getTopSuccess = () => dispatch => dispatch(fetchTopSuccess());
+
+export const getTopFailure = error => dispatch => dispatch(fetchTopFailure(error));
+
+/* --------------------------------------------- */
 
 export const search = title => () => api.books.search(title);
 
@@ -133,13 +155,6 @@ export const deleteLikeInList = id => dispatch =>
   api.books.deleteLike(id).then(book => {
     dispatch(deleteBookLikeInList(book));
   });
-
-export const getTop = () => dispatch => {
-  dispatch(loadingData(false));
-  api.books.getTop().then(books => {
-    dispatch(topFetched(books));
-  });
-};
 
 export const updateBookProgress = (num, id) => dispatch =>
   api.books.updateProgress(num, id).then(progress => {

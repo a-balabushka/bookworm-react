@@ -2,27 +2,35 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchBookData } from "../../../actions/books";
+import { getBookData } from "../../../actions/books";
 
 import DropdownBookItem from "../../items/dropdown-book-item/dropdown-book-item";
 
 import { StyledContainer, StyledAllResults } from "./style";
 
 const DropdownBookList = ({ books, query, visibility }) => {
+  const haveResults =
+    Array.isArray(books) &&
+    books.map(item => <DropdownBookItem key={item.goodreadsId} book={item} />);
+
+  const notFound = typeof books === "string" && (
+    <StyledAllResults>{books}</StyledAllResults>
+  );
+
+  const haveQuery = Array.isArray(books) && query && (
+    <Link
+      style={{ textDecoration: "none" }}
+      to={{ pathname: "/search", search: `?q=${query}&page=1` }}
+    >
+      <StyledAllResults>Show all results for "{query}"</StyledAllResults>
+    </Link>
+  );
+
   return visibility ? (
     <StyledContainer>
-      {books &&
-        books.map(item => (
-          <DropdownBookItem key={item.goodreadsId} book={item} />
-        ))}
-      {query && (
-        <Link
-          style={{ textDecoration: "none" }}
-          to={{ pathname: "/search", search: `?q=${query}&page=1` }}
-        >
-          <StyledAllResults>Show all results for "{query}"</StyledAllResults>
-        </Link>
-      )}
+      {haveResults}
+      {haveQuery}
+      {notFound}
     </StyledContainer>
   ) : null;
 };
@@ -38,11 +46,10 @@ DropdownBookList.propTypes = {
   ).isRequired,
   query: PropTypes.string.isRequired,
   visibility: PropTypes.bool.isRequired,
-  fetchBookData: PropTypes.func.isRequired
+  getBookData: PropTypes.func.isRequired
 };
 
 export default connect(
   null,
-
-  { fetchBookData }
+  { getBookData }
 )(DropdownBookList);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { toastr } from 'react-redux-toastr';
 import {
   updateBookProgress,
   updateBookProgressInList
@@ -24,6 +25,7 @@ class ReadProgressWidget extends Component {
   saveProgressClick = e => {
     e.preventDefault();
     const {
+      pages,
       goodreadsId,
       updateBookProgress,
       inList,
@@ -31,14 +33,26 @@ class ReadProgressWidget extends Component {
     } = this.props;
     const readPages = parseInt(this.state.readPages);
 
-    if (inList) {
-      updateBookProgressInList(readPages, goodreadsId).then(() =>
-        this.setState({ visibilityProgress: false })
-      );
+    if ( isNaN(readPages) || readPages < 0 || readPages > pages ) {
+      toastr.error('Error', "Invalid value");
+      return
     } else {
-      updateBookProgress(readPages, goodreadsId).then(() =>
-        this.setState({ visibilityProgress: false })
-      );
+      if (inList) {
+        updateBookProgressInList(readPages, goodreadsId)
+          .then(() => {
+            this.setState({ visibilityProgress: false });
+            toastr.success("Successful", "Changes installed successfully");
+          })
+          .catch(error =>
+            toastr.error('Server Error', error.response.data.error));
+      } else {
+        updateBookProgress(readPages, goodreadsId).then(() => {
+          this.setState({ visibilityProgress: false });
+          toastr.success("Successful", "Changes installed successfully");
+        })
+          .catch(error =>
+            toastr.error('Server Error', error.response.data.error));
+      }
     }
   };
 

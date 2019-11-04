@@ -3,11 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/dropdown-user-list/dropdown-user-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/dropdown-user-list/dropdown-user-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/dropdown-book-list/dropdown-book-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/dropdown-book-list/dropdown-book-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/search-all-results-list/search-all-results-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/search-all-results-list/search-all-results-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -228,7 +244,13 @@
       <workItem from="1572443486265" duration="7148000" />
       <workItem from="1572524799864" duration="5235000" />
       <workItem from="1572612250499" duration="5736000" />
-      <workItem from="1572629912228" duration="5857000" />
+      <workItem from="1572629912228" duration="6688000" />
+      <workItem from="1572687202745" duration="3938000" />
+      <workItem from="1572696132948" duration="13898000" />
+      <workItem from="1572787594033" duration="10231000" />
+      <workItem from="1572870010704" duration="7624000" />
+      <workItem from="1572884128188" duration="8914000" />
+      <workItem from="1572897469080" duration="8491000" />
     </task>
     <servers />
   </component>

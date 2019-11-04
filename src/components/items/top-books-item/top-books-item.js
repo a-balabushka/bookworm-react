@@ -19,7 +19,8 @@ import star from "../../../img/star.png";
 
 const TopBooksItem = ({ book }) => {
   const createDescription = () => {
-    return { __html: book.description };
+    const { description } = book;
+    return { __html: description };
   };
 
   return (

@@ -8,9 +8,10 @@ import { StyledSection } from "./style";
 const SearchAllResultsList = ({ books }) => {
   return (
     <StyledSection>
-      {books && books.map(item => (
-      <SearchAllResultsItem book={item} key={item.goodreadsId} />
-      ))}
+      {Array.isArray(books) &&
+        books.map(item => (
+          <SearchAllResultsItem book={item} key={item.goodreadsId} />
+        ))}
     </StyledSection>
   );
 };

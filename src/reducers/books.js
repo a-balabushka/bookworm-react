@@ -3,18 +3,28 @@ import {
   FETCH_TOP_REQUEST,
   FETCH_TOP_SUCCESS,
   FETCH_TOP_FAILURE,
-  BOOKS_FETCHED,
+
+  FETCH_BOOK_DATA_REQUEST,
+  FETCH_BOOK_DATA_SUCCESS,
+  FETCH_BOOK_DATA_FAILURE,
+
+  FETCH_USER_BOOKS_REQUEST,
+  FETCH_USER_BOOKS_SUCCESS,
+  FETCH_USER_BOOKS_FAILURE,
+
+  SEARCH_BOOKS_BY_PAGE_REQUEST,
+  SEARCH_BOOKS_BY_PAGE_SUCCESS,
+  SEARCH_BOOKS_BY_PAGE_FAILURE,
+
   BOOK_CREATED,
   BOOK_DELETE,
   ADD_LIKE,
   UPDATE_PROGRESS,
-  BOOK_DATA_FETCH,
   BOOK_DELETE_IN_LIST,
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST,
-  LOADING_DATA
+  UPDATE_PROGRESS_IN_LIST
 } from "../types";
 
 const initialState = {
@@ -27,30 +37,6 @@ export default function books(state = initialState, action = {}) {
   switch (action.type) {
     case BOOK_CREATED:
       return { ...state, data: { ...action.data } };
-    case BOOKS_FETCHED:
-    case BOOK_DATA_FETCH:
-      return {
-        ...state,
-        data: action.data,
-        loading: true,
-        error: null
-      };
-
-    case FETCH_TOP_REQUEST:
-      return {
-        ...state,
-        data: action.data,
-        loading: true,
-        error: null
-      };
-    case FETCH_TOP_SUCCESS:
-      return { ...state, loading: false, error: null };
-    case FETCH_TOP_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.error.response.data.error
-      };
 
     case ADD_LIKE:
     case DELETE_LIKE:
@@ -95,13 +81,43 @@ export default function books(state = initialState, action = {}) {
           item.goodreadsId === action.data.goodreadsId
             ? { ...item, readPages: action.data.readPages }
             : item
-        ),
+        )
+      };
+
+    /* ----------- REQUEST ---------- */
+    case FETCH_TOP_REQUEST:
+    case FETCH_BOOK_DATA_REQUEST:
+    case FETCH_USER_BOOKS_REQUEST:
+    case SEARCH_BOOKS_BY_PAGE_REQUEST:
+      return {
+        ...state,
         loading: true,
         error: null
       };
 
-    case LOADING_DATA:
-      return { ...state, loading: action.loading };
+    /* ----------- SUCCESS ---------- */
+    case FETCH_TOP_SUCCESS:
+    case FETCH_BOOK_DATA_SUCCESS:
+    case FETCH_USER_BOOKS_SUCCESS:
+    case SEARCH_BOOKS_BY_PAGE_SUCCESS:
+      return {
+        ...state,
+        data: action.data,
+        loading: false,
+        error: null
+      };
+
+    /* ----------- FAILURE ---------- */
+    case FETCH_TOP_FAILURE:
+    case FETCH_BOOK_DATA_FAILURE:
+    case FETCH_USER_BOOKS_FAILURE:
+    case SEARCH_BOOKS_BY_PAGE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        error: action.error.response.data.error
+      };
+
     default:
       return state;
   }

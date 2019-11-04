@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { allBooksSelector } from "../../../reducers/books";
-import { fetchBooks } from "../../../actions/books";
+import { getUserBooks, getUserBooksSuccess, getUserBooksFailure } from "../../../actions/books";
 
 import ConfirmEmailMessage from "../../messages/confirm-email-message";
 import UserBooksList from "../../lists/user-books-list/user-books-list";
@@ -11,21 +11,26 @@ import CenterLoading from "../../loaders/center-loader/center-loader";
 class DashboardPage extends Component {
 
   componentDidMount() {
-    const { fetchBooks } = this.props;
-    fetchBooks();
+    const { getUserBooks, getUserBooksSuccess, getUserBooksFailure } = this.props;
+    getUserBooks()
+      .then(books => getUserBooksSuccess(books))
+      .catch(error => getUserBooksFailure(error));
   }
 
   render() {
     const { isConfirmed, books, loading } = this.props;
-    return loading ? (
+
+    if (loading) {
+      return <CenterLoading />;
+    }
+
+    return (
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
         {books.length === 0 ? <h3>No books(</h3> : (
           <UserBooksList books={books} />
         )}
       </div>
-    ) : (
-      <CenterLoading />
     )
   }
 }
@@ -46,18 +51,20 @@ DashboardPage.propTypes = {
     }).isRequired
   ).isRequired,
   loading: PropTypes.bool.isRequired,
-  fetchBooks: PropTypes.func.isRequired
+  error: PropTypes.string.isRequired,
+  getUserBooks: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    isConfirmed: !!state.user.confirmed,
     books: allBooksSelector(state),
-    loading: state.books.loading
+    loading: state.books.loading,
+    error: state.books.error,
+    isConfirmed: !!state.user.confirmed
   };
 }
 
 export default connect(
   mapStateToProps,
-  { fetchBooks }
+  { getUserBooks, getUserBooksSuccess, getUserBooksFailure }
 )(DashboardPage);

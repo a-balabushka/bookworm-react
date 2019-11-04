@@ -19,9 +19,9 @@ export default {
       .then(res => res.data.books),
     searchByPage: (title, pageNum) => axios.get(`/api/books/search_by_page?q=${title}&page=${pageNum}`)
       .then(res => res.data),
-    fetchBookData: (id) => axios.get(`/api/books/fetch_book_data?goodreadsId=${id}`)
+    getBookData: (id) => axios.get(`/api/books/fetch_book_data?goodreadsId=${id}`)
       .then(res => res.data.book),
-    fetchAll: () => axios.get('/api/books')
+    fetchUserBooks: () => axios.get('/api/books')
       .then(res => res.data.books),
     create: book => axios.post('/api/books', { book })
       .then(res => res.data.book),

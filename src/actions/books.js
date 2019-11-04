@@ -1,29 +1,35 @@
 import api from "../api";
 import {
-  BOOKS_FETCHED,
-  BOOK_CREATED,
-  BOOK_DELETE,
   FETCH_TOP_REQUEST,
   FETCH_TOP_SUCCESS,
   FETCH_TOP_FAILURE,
+  FETCH_BOOK_DATA_REQUEST,
+  FETCH_BOOK_DATA_SUCCESS,
+  FETCH_BOOK_DATA_FAILURE,
+  FETCH_USER_BOOKS_REQUEST,
+  FETCH_USER_BOOKS_SUCCESS,
+  FETCH_USER_BOOKS_FAILURE,
+  SEARCH_BOOKS_BY_PAGE_REQUEST,
+  SEARCH_BOOKS_BY_PAGE_SUCCESS,
+  SEARCH_BOOKS_BY_PAGE_FAILURE,
+  BOOK_CREATED,
+  BOOK_DELETE,
   ADD_LIKE,
   UPDATE_PROGRESS,
-  BOOK_DATA_FETCH,
   BOOK_DELETE_IN_LIST,
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST,
-  LOADING_DATA
+  UPDATE_PROGRESS_IN_LIST
 } from "../types";
 
-const topFetched = data => ({
-  type: FETCH_TOP_REQUEST,
-  data
+const fetchTop = () => ({
+  type: FETCH_TOP_REQUEST
 });
 
-const fetchTopSuccess = () => ({
-  type: FETCH_TOP_SUCCESS
+const fetchTopSuccess = data => ({
+  type: FETCH_TOP_SUCCESS,
+  data
 });
 
 const fetchTopFailure = error => ({
@@ -31,14 +37,46 @@ const fetchTopFailure = error => ({
   error
 });
 
-const booksFetched = data => ({
-  type: BOOKS_FETCHED,
+const fetchBookData = () => ({
+  type: FETCH_BOOK_DATA_REQUEST
+});
+
+const fetchBookDataSuccess = data => ({
+  type: FETCH_BOOK_DATA_SUCCESS,
   data
 });
 
-const bookDataFetch = data => ({
-  type: BOOK_DATA_FETCH,
+const fetchBookDataFailure = error => ({
+  type: FETCH_BOOK_DATA_FAILURE,
+  error
+});
+
+const fetchUserBooks = () => ({
+  type: FETCH_USER_BOOKS_REQUEST
+});
+
+const fetchUserBooksSuccess = data => ({
+  type: FETCH_USER_BOOKS_SUCCESS,
   data
+});
+
+const fetchUserBooksFailure = error => ({
+  type: FETCH_USER_BOOKS_FAILURE,
+  error
+});
+
+const searchBooksByPage = () => ({
+  type: SEARCH_BOOKS_BY_PAGE_REQUEST
+});
+
+const searchSuccess = data => ({
+  type: SEARCH_BOOKS_BY_PAGE_SUCCESS,
+  data
+});
+
+const searchFailure = error => ({
+  type: SEARCH_BOOKS_BY_PAGE_FAILURE,
+  error
 });
 
 const bookCreated = data => ({
@@ -86,40 +124,53 @@ const updateProgressInList = data => ({
   data
 });
 
-const loadingData = loading => ({
-  type: LOADING_DATA,
-  loading
-});
-
 /* ============================================= */
 
 export const getTop = () => dispatch =>
-  api.books.getTop().then(books => dispatch(topFetched(books)));
+  api.books.getTop().then(dispatch(fetchTop()));
 
-export const getTopSuccess = () => dispatch => dispatch(fetchTopSuccess());
+export const getTopSuccess = books => dispatch =>
+  dispatch(fetchTopSuccess(books));
 
-export const getTopFailure = error => dispatch => dispatch(fetchTopFailure(error));
+export const getTopFailure = error => dispatch =>
+  dispatch(fetchTopFailure(error));
+
+/* --------------------------------------------- */
+
+export const getBookData = id => dispatch =>
+  api.books.getBookData(id).then(dispatch(fetchBookData()));
+
+export const getBookDataSuccess = book => dispatch =>
+  dispatch(fetchBookDataSuccess(book));
+
+export const getBookDataFailure = error => dispatch =>
+  dispatch(fetchBookDataFailure(error));
+
+/* --------------------------------------------- */
+
+export const getUserBooks = () => dispatch =>
+  api.books.fetchUserBooks().then(dispatch(fetchUserBooks()));
+
+export const getUserBooksSuccess = books => dispatch =>
+  dispatch(fetchUserBooksSuccess(books));
+
+export const getUserBooksFailure = error => dispatch =>
+  dispatch(fetchUserBooksFailure(error));
 
 /* --------------------------------------------- */
 
 export const search = title => () => api.books.search(title);
 
-export const searchByPage = (title, pageNum) => () =>
-  api.books.searchByPage(title, pageNum);
+export const searchByPage = (title, pageNum) => dispatch =>
+  api.books.searchByPage(title, pageNum).then(dispatch(searchBooksByPage()));
 
-export const fetchBookData = id => dispatch => {
-  dispatch(loadingData(false));
-  api.books.fetchBookData(id).then(book => {
-    dispatch(bookDataFetch(book));
-  });
-};
+export const searchBooksSuccess = books => dispatch =>
+  dispatch(searchSuccess(books));
 
-export const fetchBooks = () => dispatch => {
-  dispatch(loadingData(false));
-  api.books.fetchAll().then(books => {
-    dispatch(booksFetched(books));
-  });
-};
+export const searchBooksFailure = error => dispatch =>
+  dispatch(searchFailure(error));
+
+/* --------------------------------------------- */
 
 export const createBook = data => dispatch =>
   api.books.create(data).then(book => {

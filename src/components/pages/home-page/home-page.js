@@ -8,50 +8,52 @@ import TopBooksList from "../../lists/top-books-list/top-books-list";
 import CenterLoading from "../../loaders/center-loader/center-loader";
 import PageError from "../../errors/page-error/page-error";
 
-import { StyledContainer } from "./style";
+import * as S from "./style";
 
 class HomePage extends Component {
   componentDidMount() {
     const { getTop, getTopSuccess, getTopFailure } = this.props;
     getTop()
-      .then(() => getTopSuccess())
+      .then(books => getTopSuccess(books))
       .catch(error => getTopFailure(error));
   }
 
   render() {
     const { books, loading, error } = this.props;
-    let content;
 
-    if (error) {
-      content = <PageError title={error} />;
-    } else {
-      content = (
-        <StyledContainer>
-          <TopBooksList topLikes={true} books={books[0]} />
-          <TopBooksList topLikes={false} books={books[1]} />
-        </StyledContainer>
-      );
+    if (loading) {
+      return <CenterLoading />;
     }
 
-    return loading ? <CenterLoading /> : content;
+    if (error) {
+      return <PageError title={error} />;
+    }
+
+    return (
+      <S.Container>
+        <TopBooksList topLikes={true} books={books[0]} />
+        <TopBooksList topLikes={false} books={books[1]} />
+      </S.Container>
+    );
   }
 }
 
 HomePage.propTypes = {
   books: PropTypes.arrayOf(
-    PropTypes.shape({
-      authors: PropTypes.string.isRequired,
-      average_rating: PropTypes.number.isRequired,
-      goodreadsId: PropTypes.string.isRequired,
-      image_url: PropTypes.string.isRequired,
-      likeStatus: PropTypes.bool.isRequired,
-      pages: PropTypes.number.isRequired,
-      readPages: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      _id: PropTypes.string
-    }).isRequired
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        authors: PropTypes.string.isRequired,
+        average_rating: PropTypes.number.isRequired,
+        goodreadsId: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        _id: PropTypes.string
+      }).isRequired
+    ).isRequired
   ).isRequired,
   getTop: PropTypes.func.isRequired,
+  getTopSuccess: PropTypes.func.isRequired,
+  getTopFailure: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 };
 

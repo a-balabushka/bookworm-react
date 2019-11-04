@@ -46,11 +46,17 @@ class Search extends Component {
 
     if (query) {
       this.props.search(query).then(books => {
-        const booksHash = [];
-        const booksCount = books.length > 5 ? 5 : books.length;
+        let booksHash;
 
-        for (let i = 0; i < booksCount; i++) {
-          booksHash.push(books[i]);
+        if (Array.isArray(books)) {
+          booksHash = [];
+          const booksCount = books.length > 5 ? 5 : books.length;
+
+          for (let i = 0; i < booksCount; i++) {
+            booksHash.push(books[i]);
+          }
+        } else {
+          booksHash = books;
         }
 
         this.setState({

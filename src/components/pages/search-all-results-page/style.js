@@ -2,20 +2,20 @@ import styled from "styled-components";
 
 import { border, sectionWidth, boxShadowButton, wordsColorButton, accentColorButton } from "../../../style-constants";
 
-export const StyledContainer = styled.div`
+export const Container = styled.div`
   margin: 0 auto;
   width: ${sectionWidth};
 `;
 
-export const StyledHeadingH1 = styled.h1`
+export const HeadingH1 = styled.h1`
   margin: 1em 0;
 `;
 
-export const StyledSearchForm = styled.form`
+export const SearchForm = styled.form`
   text-align: center;
 `;
 
-export const StyledSearchInput = styled.input`
+export const SearchInput = styled.input`
   width: 25em;
   height: 2em;
   font-size: 1em;
@@ -25,7 +25,7 @@ export const StyledSearchInput = styled.input`
   outline: none;
 `;
 
-export const StyledSearchButton = styled.button`
+export const SearchButton = styled.button`
   margin-left: 0.5em;
     padding: 0.45em 1.5em;
     font-weight: 600;
@@ -36,7 +36,7 @@ export const StyledSearchButton = styled.button`
 
 `;
 
-export const StyledResults = styled.div`
+export const Results = styled.div`
   font-size: 0.9em;
   text-align: center;
   margin-top: 1.5em;

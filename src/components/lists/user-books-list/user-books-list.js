@@ -24,6 +24,7 @@ UserBooksList.propTypes = {
       goodreadsId: PropTypes.string.isRequired,
       image_url: PropTypes.string.isRequired,
       likeStatus: PropTypes.bool.isRequired,
+      readStatus: PropTypes.bool.isRequired,
       pages: PropTypes.number.isRequired,
       readPages: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

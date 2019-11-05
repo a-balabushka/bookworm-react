@@ -12,15 +12,17 @@ import {
   SEARCH_BOOKS_BY_PAGE_REQUEST,
   SEARCH_BOOKS_BY_PAGE_SUCCESS,
   SEARCH_BOOKS_BY_PAGE_FAILURE,
-  BOOK_CREATED,
-  BOOK_DELETE,
+  ADD_BOOK,
+  DELETE_BOOK,
   ADD_LIKE,
   UPDATE_PROGRESS,
   BOOK_DELETE_IN_LIST,
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
+  ADD_BOOK_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST
+  UPDATE_PROGRESS_IN_LIST,
+  CHANGE_FILTERS
 } from "../types";
 
 const fetchTop = () => ({
@@ -79,13 +81,18 @@ const searchFailure = error => ({
   error
 });
 
-const bookCreated = data => ({
-  type: BOOK_CREATED,
+const addBook = data => ({
+  type: ADD_BOOK,
+  data
+});
+
+const addBookInList = data => ({
+  type: ADD_BOOK_IN_LIST,
   data
 });
 
 const bookRemoval = data => ({
-  type: BOOK_DELETE,
+  type: DELETE_BOOK,
   data
 });
 
@@ -172,9 +179,14 @@ export const searchBooksFailure = error => dispatch =>
 
 /* --------------------------------------------- */
 
-export const createBook = data => dispatch =>
+export const readBook = data => dispatch =>
   api.books.create(data).then(book => {
-    dispatch(bookCreated(book));
+    dispatch(addBook(book));
+  });
+
+export const readBookInList = data => dispatch =>
+  api.books.create(data).then(book => {
+    dispatch(addBookInList({ goodreadsId: book.goodreadsId, readStatus: book.readStatus }));
   });
 
 export const deleteBook = id => dispatch =>
@@ -192,14 +204,14 @@ export const addLike = id => dispatch =>
     dispatch(addBookLike(book));
   });
 
-export const deleteLike = id => dispatch =>
-  api.books.deleteLike(id).then(book => {
-    dispatch(deleteBookLike(book));
-  });
-
 export const addLikeInList = id => dispatch =>
   api.books.addLike(id).then(book => {
     dispatch(addBookLikeInList(book));
+  });
+
+export const deleteLike = id => dispatch =>
+  api.books.deleteLike(id).then(book => {
+    dispatch(deleteBookLike(book));
   });
 
 export const deleteLikeInList = id => dispatch =>
@@ -216,3 +228,12 @@ export const updateBookProgressInList = (num, id) => dispatch =>
   api.books.updateProgress(num, id).then(progress => {
     dispatch(updateProgressInList(progress));
   });
+
+const changeBookFilters = filter => ({
+  type: CHANGE_FILTERS,
+  filter
+});
+
+export const changeFilters = filter => dispatch =>
+  dispatch(changeBookFilters(filter));
+

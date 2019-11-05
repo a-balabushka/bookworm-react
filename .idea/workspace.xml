@@ -3,20 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6e845bf0-7ec7-4fa7-b7b5-f4936aa8e293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/singup-form/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/messages/confirm-email-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/messages/confirm-email-message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/messages/inline-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/messages/inline-error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/confirmation-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/confirmation-page/confirmation-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/forgot-password-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/forgot-password-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/singup-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/delete-button/delete-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/like-button/like-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/buttons/read-button/read-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/buttons/read-button/read-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/items/user-book-item/user-book-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/user-book-item/user-book-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lists/user-books-list/user-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/user-books-list/user-books-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -242,7 +238,8 @@
       <workItem from="1572787594033" duration="10231000" />
       <workItem from="1572870010704" duration="7624000" />
       <workItem from="1572884128188" duration="8914000" />
-      <workItem from="1572897469080" duration="21582000" />
+      <workItem from="1572897469080" duration="26551000" />
+      <workItem from="1572946464276" duration="6733000" />
     </task>
     <servers />
   </component>

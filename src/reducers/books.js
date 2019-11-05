@@ -16,26 +16,29 @@ import {
   SEARCH_BOOKS_BY_PAGE_SUCCESS,
   SEARCH_BOOKS_BY_PAGE_FAILURE,
 
-  BOOK_CREATED,
-  BOOK_DELETE,
+  ADD_BOOK,
+  DELETE_BOOK,
+  ADD_BOOK_IN_LIST,
   ADD_LIKE,
   UPDATE_PROGRESS,
   BOOK_DELETE_IN_LIST,
   DELETE_LIKE,
   ADD_LIKE_IN_LIST,
   DELETE_LIKE_IN_LIST,
-  UPDATE_PROGRESS_IN_LIST
+  UPDATE_PROGRESS_IN_LIST,
+  CHANGE_FILTERS
 } from "../types";
 
 const initialState = {
   loading: false,
   error: null,
-  data: {}
+  data: {},
+  filter: 'all'
 };
 
 export default function books(state = initialState, action = {}) {
   switch (action.type) {
-    case BOOK_CREATED:
+    case ADD_BOOK:
       return { ...state, data: { ...action.data } };
 
     case ADD_LIKE:
@@ -43,17 +46,26 @@ export default function books(state = initialState, action = {}) {
       return {
         ...state,
         data: action.data,
-        loading: true,
+        loading: false,
         error: null
       };
-    case BOOK_DELETE:
-      return { ...state, data: { ...action.data } };
+    case DELETE_BOOK:
+      return { ...state, data: action.data };
     case UPDATE_PROGRESS:
       return {
         ...state,
         data: { ...state.data, readPages: action.data.readPages }
       };
 
+    case ADD_BOOK_IN_LIST:
+      return {
+        ...state,
+        data: state.data.map(item =>
+          item.goodreadsId === action.data.goodreadsId
+            ? { ...item, readStatus: action.data.readStatus }
+            : item
+        ),
+      };
     case ADD_LIKE_IN_LIST:
     case DELETE_LIKE_IN_LIST:
       return {
@@ -63,15 +75,25 @@ export default function books(state = initialState, action = {}) {
             ? { ...item, likeStatus: action.data.likeStatus }
             : item
         ),
-        loading: true,
+        loading: false,
         error: null
       };
     case BOOK_DELETE_IN_LIST:
       const i = state.data.findIndex(item => item.goodreadsId === action.id);
+      if (state.data[i].likeStatus === true) {
+        return {
+          ...state,
+          data: state.data.map((item, j) =>
+            i === j
+              ? { ...item, readStatus: false }
+              : item
+          )
+        }
+      }
       return {
         ...state,
         data: { ...state.data.slice(0, i), ...state.data.slice(i + 1) },
-        loading: true,
+        loading: false,
         error: null
       };
     case UPDATE_PROGRESS_IN_LIST:
@@ -81,7 +103,9 @@ export default function books(state = initialState, action = {}) {
           item.goodreadsId === action.data.goodreadsId
             ? { ...item, readPages: action.data.readPages }
             : item
-        )
+        ),
+        loading: false,
+        error: null
       };
 
     /* ----------- REQUEST ---------- */
@@ -116,6 +140,12 @@ export default function books(state = initialState, action = {}) {
         ...state,
         loading: false,
         error: action.error.response.data.error
+      };
+
+    case CHANGE_FILTERS:
+      return {
+        ...state,
+        filter: action.filter
       };
 
     default:

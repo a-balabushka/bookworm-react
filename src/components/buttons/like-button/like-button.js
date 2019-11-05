@@ -9,6 +9,7 @@ import {
 } from "../../../actions/books";
 
 import { StyledButton } from "./style";
+import { toastr } from "react-redux-toastr";
 
 const LikeButton = ({
   id,
@@ -22,9 +23,13 @@ const LikeButton = ({
   const onSubmit = e => {
     e.preventDefault();
     if (inList) {
-      likeStatus ? deleteLikeInList(id) : addLikeInList(id);
+      (likeStatus ? deleteLikeInList(id) : addLikeInList(id))
+        .then(() => toastr.success("Successful", "Changes installed successfully"))
+        .catch(error => toastr.error("Server Error", error.response.data.error))
     } else {
-      likeStatus ? deleteLike(id) : addLike(id);
+      (likeStatus ? deleteLike(id) : addLike(id))
+        .then(() => toastr.success("Successful", "Changes installed successfully"))
+        .catch(error => toastr.error("Server Error", error.response.data.error))
     }
   };
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { allBooksSelector } from "../../../reducers/books";
-import { getUserBooks, getUserBooksSuccess, getUserBooksFailure } from "../../../actions/books";
+import { getUserBooks, getUserBooksSuccess, getUserBooksFailure, changeFilters } from "../../../actions/books";
 
 import ConfirmEmailMessage from "../../messages/confirm-email-message";
 import UserBooksList from "../../lists/user-books-list/user-books-list";
@@ -17,9 +17,26 @@ class DashboardPage extends Component {
       .catch(error => getUserBooksFailure(error));
   }
 
-  render() {
-    const { isConfirmed, books, loading } = this.props;
+  filterBooks = (books, filter) => {
+    switch (filter) {
+      case 'read':
+        return books.filter(book => !book.likeStatus);
+      case 'like':
+        return books.filter(book => book.likeStatus);
+      default:
+        return books;
+    }
+  };
 
+  render() {
+    const { isConfirmed, books, loading, filter, changeFilters } = this.props;
+
+    const filtersBtn = [
+      { text: 'All', id: 'all', },
+      { text: 'Read', id: 'read', },
+      { text: 'Like', id: 'like' }
+    ];
+    const filterBooks = this.filterBooks(books, filter);
     if (loading) {
       return <CenterLoading />;
     }
@@ -27,11 +44,19 @@ class DashboardPage extends Component {
     return (
       <div>
         {!isConfirmed && <ConfirmEmailMessage />}
-        {books.length === 0 ? <h3>No books(</h3> : (
-          <UserBooksList books={books} />
+        <h2>My books</h2>
+        {filtersBtn.map(btn => (
+          <button key={btn.id} onClick={() => changeFilters(btn.id)}>
+            {btn.text}
+          </button>
+          ))}
+        {books.length === 0 ? (
+          <h3>No books(</h3>
+        ) : (
+          <UserBooksList books={filterBooks} />
         )}
       </div>
-    )
+    );
   }
 }
 
@@ -60,11 +85,12 @@ function mapStateToProps(state) {
     books: allBooksSelector(state),
     loading: state.books.loading,
     error: state.books.error,
+    filter: state.books.filter,
     isConfirmed: !!state.user.confirmed
   };
 }
 
 export default connect(
   mapStateToProps,
-  { getUserBooks, getUserBooksSuccess, getUserBooksFailure }
+  { getUserBooks, getUserBooksSuccess, getUserBooksFailure, changeFilters }
 )(DashboardPage);

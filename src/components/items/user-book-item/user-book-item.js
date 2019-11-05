@@ -10,6 +10,7 @@ import { StyledArticle, StyledLeft, StyledCover, StyledCenter, StyledRight, Styl
 
 import starBorder from "../../../img/star_border.png";
 import star from "../../../img/star.png";
+import ReadButton from "../../buttons/read-button/read-button";
 
 class UserBookItem extends Component {
 
@@ -34,7 +35,10 @@ class UserBookItem extends Component {
           </StyledRating>
           <StyledButtonsDiv>
             <StyledButtonItem>
-              <DeleteButton id={book.goodreadsId} inList={false} />
+              {book.readStatus
+                ? <DeleteButton id={book.goodreadsId} inList={true} />
+                : <ReadButton book={book} inList={true} />
+              }
             </StyledButtonItem>
             <StyledButtonItem>
               <LikeButton

@@ -61,8 +61,8 @@ class BookPage extends Component {
           <S.Cover src={book.image_url} alt={`${book.title} cover`} />
           { confirmed && <div>
             {book.readStatus
-              ? <DeleteButton id={book.goodreadsId} inList={true} />
-              : <ReadButton book={book} /> }
+              ? <DeleteButton id={book.goodreadsId} inList={false} />
+              : <ReadButton book={book} inList={false}/> }
           </div> }
 
           { confirmed && <div>

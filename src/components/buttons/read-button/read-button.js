@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { createBook } from "../../../actions/books";
+import { toastr } from "react-redux-toastr";
+import { readBook, readBookInList } from "../../../actions/books";
 
 import { StyledButton } from './style';
 
-const ReadButton = ({ book, createBook }) => {
+const ReadButton = ({ book, readBook, readBookInList, inList }) => {
   const onSubmit = e => {
     e.preventDefault();
-    createBook(book)
+    (inList ? readBookInList(book) : readBook(book))
+      .then(() => toastr.success("Successful", "Changes installed successfully"))
+      .catch(error => toastr.error("Server Error", error.response.data.error));
   };
 
   return <StyledButton onClick={onSubmit}>Read</StyledButton>;
@@ -27,9 +30,10 @@ ReadButton.propTypes = {
     _id: PropTypes.string
   }).isRequired,
   createBook: PropTypes.func.isRequired,
+  inList: PropTypes.bool.isRequired
 };
 
 export default connect(
   null,
-  { createBook }
+  { readBook, readBookInList }
 )(ReadButton);

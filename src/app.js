@@ -7,7 +7,7 @@ import HomePage from "./components/pages/home-page/home-page";
 import LoginPage from "./components/pages/login-page/login-page";
 import DashboardPage from "./components/pages/dashboard-page/dashboard-page";
 import SignUpPage from "./components/pages/singup-page/signup-page";
-import ConfirmationPage from "./components/pages/confirmation-page";
+import ConfirmationPage from "./components/pages/confirmation-page/confirmation-page";
 import ForgotPasswordPage from "./components/pages/forgot-password-page/forgot-password-page";
 import ResetPasswordPage from "./components/pages/reset-password-page";
 import UserRoute from "./components/routes/user-route";

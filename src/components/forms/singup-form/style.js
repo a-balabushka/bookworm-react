@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 import { wordsColorButton, accentColorButton } from "../../../style-constants";
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+`;
+
 export const FormField = styled.div`
-  margin: 2em 0;
+  margin: 1em 0;
   text-align: center;
 `;
 
@@ -15,7 +21,7 @@ export const FormInput = styled.input`
 `;
 
 export const SingUpButton = styled.button`
-  width: 100%;
+   width: 100%;
    padding: 0.75em;
    margin-top: 2em;
    color: ${wordsColorButton};
@@ -25,3 +31,5 @@ export const SingUpButton = styled.button`
    border: none;
    cursor: pointer;
 `;
+
+

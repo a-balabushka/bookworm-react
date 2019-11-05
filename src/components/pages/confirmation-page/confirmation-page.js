@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Message, Icon } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { confirm } from '../../actions/auth';
+import { confirm } from '../../../actions/auth';
+
+import * as S from "./style";
 
 class ConfirmationPage extends Component {
 
@@ -35,30 +36,22 @@ class ConfirmationPage extends Component {
     return (
       <div>
         {loading && (
-          <Message icon>
-            <Icon name="circle notched" loading />
-            <Message.Header>Validation your email</Message.Header>
-          </Message>
+          <S.ContainerLoading>
+            <S.Message>Validation your email...</S.Message>
+          </S.ContainerLoading>
         )}
 
         {!loading && success && (
-          <Message icon>
-            <Icon name="checkmark" />
-            <Message.Content>
-              <Message.Header>Thank you. Your account has been verified</Message.Header>
-              <Link to="/dashboard">Go to your dashboard</Link>
-            </Message.Content>
-          </Message>
+          <S.ContainerSuccess>
+            <S.Message>Thank you. Your account has been verified</S.Message>
+          </S.ContainerSuccess>
         )}
 
         {!loading &&
         !success && (
-          <Message negative icon>
-            <Icon name="warning sign" />
-            <Message.Content>
-              <Message.Header>Ooops. Invalid token it seems.</Message.Header>
-            </Message.Content>
-          </Message>
+          <S.ContainerFailure>
+            <S.Message>Ooops. Invalid token it seems.</S.Message>
+          </S.ContainerFailure>
         )}
       </div>
     )

@@ -4,7 +4,7 @@ import { accentColorButton, boxShadowButton } from "../../../style-constants";
 
 export const Container = styled.div`
   width: 400px;
-  height: 250px;
+  height: 275px;
   
   padding: 1em 2em;
   position: absolute;

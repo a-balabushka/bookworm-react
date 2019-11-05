@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Validator from 'validator';
 import PropTypes from 'prop-types';
+import { loginValidation } from "../../../utils/validation/login-validation";
 
 import InlineError from '../../messages/inline-error';
 
@@ -29,7 +29,7 @@ class LoginForm extends Component {
   onSubmit = e => {
     e.preventDefault();
     const { data } = this.state;
-    const errors = this.validate(data);
+    const errors = loginValidation(data);
     this.setState({
       errors
     });
@@ -43,20 +43,6 @@ class LoginForm extends Component {
           });
         });
     }
-  };
-
-  validate = (data) => {
-    const errors = {};
-
-    if (!Validator.isEmail(data.email)) {
-      errors.email = 'Invalid email';
-    }
-
-    if (!data.password) {
-      errors.password = 'Can\'t be blank';
-    }
-
-    return errors;
   };
 
   render() {

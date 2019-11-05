@@ -5,26 +5,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/items/top-books-item/top-books-item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/dropdown-book-list/dropdown-book-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/dropdown-book-list/dropdown-book-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/search-all-results-list/search-all-results-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/search-all-results-list/search-all-results-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/lists/top-books-list/top-books-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/book-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/book-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/book-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/dashboard-page/dashboard-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/home-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/home-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/home-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/search-all-result-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/search-all-results-page/style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/search/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search/search/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/widgets/read-progress-widget/read-progress-widget.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/root-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/root-reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/forgot-password-form/forgot-password-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/login-form/login-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/reset-password-form/reset-password-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/signup-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/singup-form/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/singup-form/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/messages/confirm-email-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/messages/confirm-email-message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/messages/inline-error.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/messages/inline-error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/confirmation-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/confirmation-page/confirmation-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/forgot-password-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/forgot-password-page/style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/signup-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/singup-page/style.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/singup-page/style.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,11 +76,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\confirmation-page" />
+      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\utils\validation" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\reset-password-form" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\forgot-password-form" />
       <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\forgot-password-page" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\forms\singup-form" />
-      <recent name="D:\Work\Examples\bookworm\bookworm-react\src\components\pages\singup-page" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -250,7 +242,7 @@
       <workItem from="1572787594033" duration="10231000" />
       <workItem from="1572870010704" duration="7624000" />
       <workItem from="1572884128188" duration="8914000" />
-      <workItem from="1572897469080" duration="8491000" />
+      <workItem from="1572897469080" duration="21582000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Validator from 'validator';
+import { forgotPasswordValidation } from "../../../utils/validation/forgot-password-validation";
 
 import InlineError from '../../messages/inline-error';
 
@@ -19,7 +19,7 @@ class ForgotPasswordForm extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const { data } = this.state;
-    const errors = this.validate(data);
+    const errors = forgotPasswordValidation(data);
     this.setState({
       errors
     });
@@ -49,24 +49,14 @@ class ForgotPasswordForm extends Component {
     })
   };
 
-  validate = (data) => {
-    const errors = {};
-
-    if (!Validator.isEmail(data.email)) {
-      errors.email = 'Invalid email';
-    }
-
-    return errors;
-  };
-
   render() {
-    const { data, loading, errors } = this.state;
+    const { data, errors } = this.state;
 
     return (
-      <from onSubmit={this.onSubmit} loading={loading}>
+      <form onSubmit={this.onSubmit}>
         <FormField error={ !!errors.email }>
           <FormInput
-            type="email"
+            type="text"
             id="email"
             name="email"
             placeholder="Enter your email"
@@ -76,7 +66,7 @@ class ForgotPasswordForm extends Component {
           {errors.email && <InlineError text={ errors.email } />}
         </FormField>
         <Button>Continue</Button>
-      </from>
+      </form>
     )
   }
 }
